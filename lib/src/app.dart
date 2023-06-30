@@ -1,6 +1,7 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:khj/src/model/project_class.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../src/widgets/personal_profile.dart';
 import 'package:intl/intl.dart';
 import '../generated/l10n.dart';
@@ -16,6 +17,7 @@ class Portfolio extends StatefulWidget {
 }
 
 class _PortfolioState extends State<Portfolio> {
+  final GlobalKey footerButton = GlobalKey();
   @override
   void initState() {
     super.initState();
@@ -31,10 +33,36 @@ class _PortfolioState extends State<Portfolio> {
       projects.add(projectReport(context));
       projects.add(projectTTWRoster(context));
       projects.add(projectClips(context));
+      projects.add(projectGllim(context));
+
       setState(() {});
     }
 
     initProjects();
+
+    final condeLinkButton = Container(
+      key: footerButton,
+      padding: const EdgeInsets.all(1.0),
+      width: double.infinity,
+      height: 36,
+      color: Colors.blueGrey,
+      child: Align(
+          alignment: Alignment.centerRight,
+          child: InkWell(
+            borderRadius: BorderRadius.zero,
+            onTap: () async {
+              await launchUrl(Uri.parse('https://github.com/koriai/portfolio'));
+            },
+            child: const Text(
+              'You can find the code of this page, Click here  ',
+              style: TextStyle(
+                fontSize: 12,
+                color: Colors.white,
+                backgroundColor: Colors.blueGrey,
+              ),
+            ),
+          )),
+    );
 
     /// Change [themeMode] of the app
     IconButton changeThemeModeButton = IconButton(
@@ -107,19 +135,7 @@ class _PortfolioState extends State<Portfolio> {
                         return projects[index].card(context);
                       }),
                 )),
-                Semantics(
-                  label: 'footer',
-                  container: true,
-                  child: Container(
-                      padding: const EdgeInsets.all(8.0),
-                      width: double.infinity,
-                      height: 60,
-                      color: Colors.blueGrey,
-                      child: const Align(
-                        alignment: Alignment.centerRight,
-                        child: Text('footer'),
-                      )),
-                )
+                condeLinkButton
               ],
             ),
     );

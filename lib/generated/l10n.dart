@@ -80,50 +80,50 @@ class S {
     );
   }
 
-  /// ``
+  /// `Analyze Commnets of YouTube content, and make a report`
   String get srDescription {
     return Intl.message(
-      '',
+      'Analyze Commnets of YouTube content, and make a report',
       name: 'srDescription',
       desc: '',
       args: [],
     );
   }
 
-  /// `TTW `
+  /// `TTW:Warhammer3 Roster Simulator`
   String get ttwTitle {
     return Intl.message(
-      'TTW ',
+      'TTW:Warhammer3 Roster Simulator',
       name: 'ttwTitle',
       desc: '',
       args: [],
     );
   }
 
-  /// ``
+  /// `This web provides users to simulate the roster of Total War: Warhammer3`
   String get ttwDescription {
     return Intl.message(
-      '',
+      'This web provides users to simulate the roster of Total War: Warhammer3',
       name: 'ttwDescription',
       desc: '',
       args: [],
     );
   }
 
-  /// `CLIPS `
+  /// `CLIP-u`
   String get clipsTitle {
     return Intl.message(
-      'CLIPS ',
+      'CLIP-u',
       name: 'clipsTitle',
       desc: '',
       args: [],
     );
   }
 
-  /// ``
+  /// `This web provides users to watch clips`
   String get clipsDescription {
     return Intl.message(
-      '',
+      'This web provides users to watch clips',
       name: 'clipsDescription',
       desc: '',
       args: [],
@@ -140,100 +140,130 @@ class S {
     );
   }
 
-  /// `SR 리포트는`
+  /// `front-end`
+  String get frontendTitle {
+    return Intl.message(
+      'front-end',
+      name: 'frontendTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `back-end`
+  String get backendTitle {
+    return Intl.message(
+      'back-end',
+      name: 'backendTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `cloud`
+  String get cloudTitle {
+    return Intl.message(
+      'cloud',
+      name: 'cloudTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Flutter web & app`
   String get srFrontDes1 {
     return Intl.message(
-      'SR 리포트는',
+      'Flutter web & app',
       name: 'srFrontDes1',
       desc: '',
       args: [],
     );
   }
 
-  /// `SR 리포트는`
+  /// `Firebase uses`
   String get srFrontDes2 {
     return Intl.message(
-      'SR 리포트는',
+      'Firebase uses',
       name: 'srFrontDes2',
       desc: '',
       args: [],
     );
   }
 
-  /// `SR 리포트는`
+  /// `Korean & English support`
   String get srFrontDes3 {
     return Intl.message(
-      'SR 리포트는',
+      'Korean & English support',
       name: 'srFrontDes3',
       desc: '',
       args: [],
     );
   }
 
-  /// `SR 리포트는`
+  /// `Python Django REST API use`
   String get srBackDes1 {
     return Intl.message(
-      'SR 리포트는',
+      'Python Django REST API use',
       name: 'srBackDes1',
       desc: '',
       args: [],
     );
   }
 
-  /// `SR 리포트는`
+  /// `With Cronjob, schedule the task`
   String get srBackDes2 {
     return Intl.message(
-      'SR 리포트는',
+      'With Cronjob, schedule the task',
       name: 'srBackDes2',
       desc: '',
       args: [],
     );
   }
 
-  /// `SR 리포트는`
+  /// `Pandas & Numpy use`
   String get srBackDes3 {
     return Intl.message(
-      'SR 리포트는',
+      'Pandas & Numpy use',
       name: 'srBackDes3',
       desc: '',
       args: [],
     );
   }
 
-  /// `SR 리포트는`
+  /// `GCP & Google Login`
   String get srCloudDes1 {
     return Intl.message(
-      'SR 리포트는',
+      'GCP & Google Login',
       name: 'srCloudDes1',
       desc: '',
       args: [],
     );
   }
 
-  /// `SR 리포트는`
+  /// `firebase hosting, firestore, storage, functions(TypeScript)`
   String get srCloudDes2 {
     return Intl.message(
-      'SR 리포트는',
+      'firebase hosting, firestore, storage, functions(TypeScript)',
       name: 'srCloudDes2',
       desc: '',
       args: [],
     );
   }
 
-  /// `SR 리포트는`
+  /// `remote-config, analytics, crashlytics, performance`
   String get srCloudDes3 {
     return Intl.message(
-      'SR 리포트는',
+      'remote-config, analytics, crashlytics, performance',
       name: 'srCloudDes3',
       desc: '',
       args: [],
     );
   }
 
-  /// `TTW는`
+  /// `Flutter Web`
   String get ttwFrontDes1 {
     return Intl.message(
-      'TTW는',
+      'Flutter Web',
       name: 'ttwFrontDes1',
       desc: '',
       args: [],
@@ -250,50 +280,60 @@ class S {
     );
   }
 
-  /// `TTW는`
+  /// ``
   String get ttwFrontDes3 {
     return Intl.message(
-      'TTW는',
+      '',
       name: 'ttwFrontDes3',
       desc: '',
       args: [],
     );
   }
 
-  /// `TTW는`
+  /// `Extract game DB, convert to csv, pandas Analyze`
   String get ttwBackDes1 {
     return Intl.message(
-      'TTW는',
+      'Extract game DB, convert to csv, pandas Analyze',
       name: 'ttwBackDes1',
       desc: '',
       args: [],
     );
   }
 
-  /// `TTW는`
+  /// `pandas merge, lambda, apply `
   String get ttwBackDes2 {
     return Intl.message(
-      'TTW는',
+      'pandas merge, lambda, apply ',
       name: 'ttwBackDes2',
       desc: '',
       args: [],
     );
   }
 
-  /// `CLIPS는`
+  /// `firebase hosting`
+  String get ttwCloudDes1 {
+    return Intl.message(
+      'firebase hosting',
+      name: 'ttwCloudDes1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Flutter web`
   String get clipsFrontDes1 {
     return Intl.message(
-      'CLIPS는',
+      'Flutter web',
       name: 'clipsFrontDes1',
       desc: '',
       args: [],
     );
   }
 
-  /// `CLIPS는`
+  /// `go_router & media support`
   String get clipsFrontDes2 {
     return Intl.message(
-      'CLIPS는',
+      'go_router & media support',
       name: 'clipsFrontDes2',
       desc: '',
       args: [],
@@ -310,21 +350,41 @@ class S {
     );
   }
 
-  /// `CLIPS는`
+  /// `firebase firestore, managing clips`
   String get clipsCloudDes1 {
     return Intl.message(
-      'CLIPS는',
+      'firebase firestore, managing clips',
       name: 'clipsCloudDes1',
       desc: '',
       args: [],
     );
   }
 
-  /// `CLIPS는`
+  /// `firebase hosting`
   String get clipsCloudDes2 {
     return Intl.message(
-      'CLIPS는',
+      'firebase hosting',
       name: 'clipsCloudDes2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `GLLIM`
+  String get gllimTitle {
+    return Intl.message(
+      'GLLIM',
+      name: 'gllimTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Analyze & find pictures with words, Translation`
+  String get gllimDescription {
+    return Intl.message(
+      'Analyze & find pictures with words, Translation',
+      name: 'gllimDescription',
       desc: '',
       args: [],
     );

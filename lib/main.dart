@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:go_router/go_router.dart';
 import '../generated/l10n.dart';
@@ -18,9 +19,8 @@ class MyApp extends StatelessWidget {
   MyApp({super.key});
 
   // final ValueKey<String> _scaffoldKey = const ValueKey<String>('AppScaffold');
-  // final GlobalKey _stateKey = GlobalKey();
   static final ValueNotifier<ThemeMode> themeNotifier =
-      ValueNotifier(ThemeMode.system);
+      ValueNotifier(ThemeMode.light);
 
   @override
   Widget build(BuildContext context) {
@@ -34,6 +34,9 @@ class MyApp extends StatelessWidget {
             themeMode: currentMode,
             localizationsDelegates: const [
               S.delegate,
+              GlobalMaterialLocalizations.delegate,
+              GlobalWidgetsLocalizations.delegate,
+              GlobalCupertinoLocalizations.delegate,
             ],
             supportedLocales: S.delegate.supportedLocales,
             // home: const Portfolio(),

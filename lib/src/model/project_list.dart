@@ -41,12 +41,13 @@ Project projectTTWRoster(context) {
       description: S.of(context).ttwDescription,
       frontEndDescription: [
         S.of(context).ttwFrontDes1,
-        S.of(context).ttwFrontDes2,
-        S.of(context).ttwFrontDes3
       ],
       backEndDescription: [
         S.of(context).ttwBackDes1,
         S.of(context).ttwBackDes2,
+      ],
+      cloudDescription: [
+        S.of(context).ttwCloudDes1
       ]);
 }
 
@@ -65,4 +66,13 @@ Project projectClips(context) {
         S.of(context).clipsCloudDes1,
         S.of(context).clipsCloudDes2,
       ]);
+}
+
+/// clips-u project
+Project projectGllim(context) {
+  return Project(
+    title: S.of(context).gllimTitle,
+    image: Image.asset('clips_thumbnail.png'),
+    description: S.of(context).gllimDescription,
+  );
 }

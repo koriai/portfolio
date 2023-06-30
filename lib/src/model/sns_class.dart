@@ -12,6 +12,6 @@ class SNS {
     required this.image,
     required this.description,
   }) {
-    print('SNS: $title');
+    // print('SNS: $title');
   }
 }
