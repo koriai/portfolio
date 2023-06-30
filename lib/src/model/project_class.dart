@@ -12,7 +12,7 @@ class Project {
   final String title;
 
   /// Uri to open the project
-  final Uri web;
+  final Uri? web;
 
   /// Uri to open the project
   final Uri? ios;
@@ -26,17 +26,24 @@ class Project {
   /// description of the project
   final String description;
 
+  List<String> frontEndDescription = [];
+  List<String> backEndDescription = [];
+  List<String> cloudDescription = [];
+
   List<String> packages;
 
   Project(
       {required this.title,
-      required this.web,
       required this.image,
       required this.description,
+      this.web,
       this.ios,
       this.aos,
-      this.packages = const []}) {
-    print('Project: $title');
+      this.packages = const [],
+      this.frontEndDescription = const [],
+      this.backEndDescription = const [],
+      this.cloudDescription = const []}) {
+    // print('Project: $title');
   }
   Widget card(context) {
     return projectCard(context, title,
@@ -45,6 +52,9 @@ class Project {
         aos: aos,
         image: image,
         description: description,
+        frontEndDescription: frontEndDescription,
+        backEndDescription: backEndDescription,
+        cloudDescription: cloudDescription,
         packages: packages);
   }
 }

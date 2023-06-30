@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 /// Height of the [project] card.
 const double projectCardHeight = 720.0;

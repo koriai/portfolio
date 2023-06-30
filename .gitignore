@@ -4,3 +4,4 @@ macos/
 lib/firebase_options.dart
 .flutter-plugins
 .flutter-plugins-dependencies
+.DS_Store

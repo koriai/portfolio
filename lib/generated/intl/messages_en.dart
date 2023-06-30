@@ -24,13 +24,57 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "apptitle": MessageLookupByLibrary.simpleMessage(
             "HyunJin\'s Flutter Portfolio"),
-        "clipsDescription": MessageLookupByLibrary.simpleMessage(""),
-        "clipsTitle": MessageLookupByLibrary.simpleMessage("CLIPS "),
+        "backendTitle": MessageLookupByLibrary.simpleMessage("back-end"),
+        "clipsCloudDes1": MessageLookupByLibrary.simpleMessage(
+            "firebase firestore, managing clips"),
+        "clipsCloudDes2":
+            MessageLookupByLibrary.simpleMessage("firebase hosting"),
+        "clipsDescription": MessageLookupByLibrary.simpleMessage(
+            "This web provides users to watch clips"),
+        "clipsFrontDes1": MessageLookupByLibrary.simpleMessage("Flutter web"),
+        "clipsFrontDes2":
+            MessageLookupByLibrary.simpleMessage("go_router & media support"),
+        "clipsFrontDes3": MessageLookupByLibrary.simpleMessage("CLIPS는"),
+        "clipsTitle": MessageLookupByLibrary.simpleMessage("CLIP-u"),
+        "cloudTitle": MessageLookupByLibrary.simpleMessage("cloud"),
+        "frontendTitle": MessageLookupByLibrary.simpleMessage("front-end"),
+        "gllimDescription": MessageLookupByLibrary.simpleMessage(
+            "Analyze & find pictures with words, Translation"),
+        "gllimTitle": MessageLookupByLibrary.simpleMessage("GLLIM"),
         "name": MessageLookupByLibrary.simpleMessage("HyunJin Kim"),
         "packagesTitle": MessageLookupByLibrary.simpleMessage("PACKAGES "),
-        "srDescription": MessageLookupByLibrary.simpleMessage(""),
+        "srBackDes1":
+            MessageLookupByLibrary.simpleMessage("Python Django REST API use"),
+        "srBackDes2": MessageLookupByLibrary.simpleMessage(
+            "With Cronjob, schedule the task"),
+        "srBackDes3":
+            MessageLookupByLibrary.simpleMessage("Pandas & Numpy use"),
+        "srCloudDes1":
+            MessageLookupByLibrary.simpleMessage("GCP & Google Login"),
+        "srCloudDes2": MessageLookupByLibrary.simpleMessage(
+            "firebase hosting, firestore, storage, functions(TypeScript)"),
+        "srCloudDes3": MessageLookupByLibrary.simpleMessage(
+            "remote-config, analytics, crashlytics, performance"),
+        "srDescription": MessageLookupByLibrary.simpleMessage(
+            "Analyze Commnets of YouTube content, and make a report"),
+        "srFrontDes1":
+            MessageLookupByLibrary.simpleMessage("Flutter web & app"),
+        "srFrontDes2": MessageLookupByLibrary.simpleMessage("Firebase uses"),
+        "srFrontDes3":
+            MessageLookupByLibrary.simpleMessage("Korean & English support"),
         "srTitle": MessageLookupByLibrary.simpleMessage("SR Report"),
-        "ttwDescription": MessageLookupByLibrary.simpleMessage(""),
-        "ttwTitle": MessageLookupByLibrary.simpleMessage("TTW ")
+        "ttwBackDes1": MessageLookupByLibrary.simpleMessage(
+            "Extract game DB, convert to csv, pandas Analyze"),
+        "ttwBackDes2": MessageLookupByLibrary.simpleMessage(
+            "pandas merge, lambda, apply "),
+        "ttwCloudDes1":
+            MessageLookupByLibrary.simpleMessage("firebase hosting"),
+        "ttwDescription": MessageLookupByLibrary.simpleMessage(
+            "This web provides users to simulate the roster of Total War: Warhammer3"),
+        "ttwFrontDes1": MessageLookupByLibrary.simpleMessage("Flutter Web"),
+        "ttwFrontDes2": MessageLookupByLibrary.simpleMessage("TTW는"),
+        "ttwFrontDes3": MessageLookupByLibrary.simpleMessage(""),
+        "ttwTitle": MessageLookupByLibrary.simpleMessage(
+            "TTW:Warhammer3 Roster Simulator")
       };
 }
