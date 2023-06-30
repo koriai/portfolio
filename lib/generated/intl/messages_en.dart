@@ -24,13 +24,32 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "apptitle": MessageLookupByLibrary.simpleMessage(
             "HyunJin\'s Flutter Portfolio"),
+        "clipsCloudDes1": MessageLookupByLibrary.simpleMessage("CLIPS는"),
+        "clipsCloudDes2": MessageLookupByLibrary.simpleMessage("CLIPS는"),
         "clipsDescription": MessageLookupByLibrary.simpleMessage(""),
+        "clipsFrontDes1": MessageLookupByLibrary.simpleMessage("CLIPS는"),
+        "clipsFrontDes2": MessageLookupByLibrary.simpleMessage("CLIPS는"),
+        "clipsFrontDes3": MessageLookupByLibrary.simpleMessage("CLIPS는"),
         "clipsTitle": MessageLookupByLibrary.simpleMessage("CLIPS "),
         "name": MessageLookupByLibrary.simpleMessage("HyunJin Kim"),
         "packagesTitle": MessageLookupByLibrary.simpleMessage("PACKAGES "),
+        "srBackDes1": MessageLookupByLibrary.simpleMessage("SR 리포트는"),
+        "srBackDes2": MessageLookupByLibrary.simpleMessage("SR 리포트는"),
+        "srBackDes3": MessageLookupByLibrary.simpleMessage("SR 리포트는"),
+        "srCloudDes1": MessageLookupByLibrary.simpleMessage("SR 리포트는"),
+        "srCloudDes2": MessageLookupByLibrary.simpleMessage("SR 리포트는"),
+        "srCloudDes3": MessageLookupByLibrary.simpleMessage("SR 리포트는"),
         "srDescription": MessageLookupByLibrary.simpleMessage(""),
+        "srFrontDes1": MessageLookupByLibrary.simpleMessage("SR 리포트는"),
+        "srFrontDes2": MessageLookupByLibrary.simpleMessage("SR 리포트는"),
+        "srFrontDes3": MessageLookupByLibrary.simpleMessage("SR 리포트는"),
         "srTitle": MessageLookupByLibrary.simpleMessage("SR Report"),
+        "ttwBackDes1": MessageLookupByLibrary.simpleMessage("TTW는"),
+        "ttwBackDes2": MessageLookupByLibrary.simpleMessage("TTW는"),
         "ttwDescription": MessageLookupByLibrary.simpleMessage(""),
+        "ttwFrontDes1": MessageLookupByLibrary.simpleMessage("TTW는"),
+        "ttwFrontDes2": MessageLookupByLibrary.simpleMessage("TTW는"),
+        "ttwFrontDes3": MessageLookupByLibrary.simpleMessage("TTW는"),
         "ttwTitle": MessageLookupByLibrary.simpleMessage("TTW ")
       };
 }

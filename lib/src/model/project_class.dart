@@ -26,6 +26,10 @@ class Project {
   /// description of the project
   final String description;
 
+  List<String> frontEndDescription = [];
+  List<String> backEndDescription = [];
+  List<String> cloudDescription = [];
+
   List<String> packages;
 
   Project(
@@ -35,7 +39,10 @@ class Project {
       required this.description,
       this.ios,
       this.aos,
-      this.packages = const []}) {
+      this.packages = const [],
+      this.frontEndDescription = const [],
+      this.backEndDescription = const [],
+      this.cloudDescription = const []}) {
     print('Project: $title');
   }
   Widget card(context) {
@@ -45,6 +52,9 @@ class Project {
         aos: aos,
         image: image,
         description: description,
+        frontEndDescription: frontEndDescription,
+        backEndDescription: backEndDescription,
+        cloudDescription: cloudDescription,
         packages: packages);
   }
 }

@@ -47,7 +47,7 @@ profile(BuildContext context) {
                 onPressed: () async {
                   await launchUrl(Uri.parse(''));
                 },
-                icon: Icon(Icons.abc),
+                icon: const Icon(Icons.abc),
               ),
 
               /// linkedIn
@@ -56,7 +56,7 @@ profile(BuildContext context) {
                 onPressed: () async {
                   await launchUrl(Uri.parse(''));
                 },
-                icon: Icon(Icons.abc),
+                icon: const Icon(Icons.abc),
               ),
 
               /// Instagram
@@ -65,7 +65,7 @@ profile(BuildContext context) {
                 onPressed: () async {
                   await launchUrl(Uri.parse(''));
                 },
-                icon: Icon(Icons.abc),
+                icon: const Icon(Icons.abc),
               ),
             ],
           )
