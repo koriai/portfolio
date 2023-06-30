@@ -9,7 +9,7 @@ Project projectReport(BuildContext context) {
       web: Uri.parse('https://app.koriai.com/'),
       aos: Uri.parse(
           'https://play.google.com/store/apps/details?id=com.koriai.report'),
-      image: Image.asset('srreport_thumbnail.png'),
+      image: Image.asset('assets/srreport_thumbnail.png'),
       description: S.of(context).srDescription,
       frontEndDescription: [
         S.of(context).srFrontDes1,
@@ -37,7 +37,7 @@ Project projectTTWRoster(context) {
   return Project(
       title: S.of(context).ttwTitle,
       web: Uri.parse('https://ttw-roster.web.app/'),
-      image: Image.asset('ttwroster_thumbnail.png'),
+      image: Image.asset('assets/ttwroster_thumbnail.png'),
       description: S.of(context).ttwDescription,
       frontEndDescription: [
         S.of(context).ttwFrontDes1,
@@ -56,7 +56,7 @@ Project projectClips(context) {
   return Project(
       title: S.of(context).clipsTitle,
       web: Uri.parse('https://clips-u.web.app/'),
-      image: Image.asset('clips_thumbnail.png'),
+      image: Image.asset('assets/clips_thumbnail.png'),
       description: S.of(context).clipsDescription,
       frontEndDescription: [
         S.of(context).clipsFrontDes1,
@@ -72,7 +72,7 @@ Project projectClips(context) {
 Project projectGllim(context) {
   return Project(
     title: S.of(context).gllimTitle,
-    image: Image.asset('clips_thumbnail.png'),
+    image: Image.asset('assets/clips_thumbnail.png'),
     description: S.of(context).gllimDescription,
   );
 }

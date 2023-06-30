@@ -34,7 +34,7 @@ profile(BuildContext context) {
           await launchUrl(Uri.parse('https://github.com/koriai'));
         },
         icon: const ImageIcon(
-          AssetImage('icons/github-mark.png'),
+          AssetImage('assets/icons/github-mark.png'),
           size: 24,
         ),
       ),
@@ -46,7 +46,7 @@ profile(BuildContext context) {
           await launchUrl(Uri.parse('https://www.linkedin.com/in/khi999/'));
         },
         icon: const ImageIcon(
-          AssetImage('icons/LI-In-Bug.png'),
+          AssetImage('assets/icons/LI-In-Bug.png'),
           size: 24,
         ),
       ),

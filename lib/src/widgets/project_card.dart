@@ -57,7 +57,7 @@ Widget projectCard(
                               await launchUrl(aos);
                             },
                             icon: const ImageIcon(
-                              AssetImage('icons/android.png'),
+                              AssetImage('assets/icons/android.png'),
                               size: 24,
                             )),
                     (web == null)
@@ -68,7 +68,7 @@ Widget projectCard(
                               await launchUrl(web);
                             },
                             icon: const ImageIcon(
-                              AssetImage('icons/web.png'),
+                              AssetImage('assets/icons/web.png'),
                               size: 24,
                             )),
                   ]),
