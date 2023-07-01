@@ -45,7 +45,7 @@ class Project {
       this.cloudDescription = const []}) {
     // print('Project: $title');
   }
-  Widget card(context) {
+  Widget card(context, double? screenWidth) {
     return projectCard(context, title,
         web: web,
         ios: ios,
@@ -55,6 +55,7 @@ class Project {
         frontEndDescription: frontEndDescription,
         backEndDescription: backEndDescription,
         cloudDescription: cloudDescription,
-        packages: packages);
+        packages: packages,
+        screenWidth: screenWidth);
   }
 }

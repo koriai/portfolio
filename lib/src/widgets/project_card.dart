@@ -15,6 +15,7 @@ Widget projectCard(
   List<String> packages = const [],
   Uri? ios,
   Uri? aos,
+  double? screenWidth,
 }) {
   // final packagesBox = packages.map((e) => Text('  $e')).toList();
   final frontEndDesBox = frontEndDescription.map((e) => Text('  $e')).toList();
@@ -24,7 +25,7 @@ Widget projectCard(
   return Card(
     child: SizedBox(
       height: projectCardHeight,
-      width: projectCardWidth,
+      width: (screenWidth != null) ? screenWidth : projectCardWidth,
       child: Padding(
         padding: const EdgeInsets.fromLTRB(12, 12, 12, 6),
         child: ListView(
@@ -64,6 +65,7 @@ Widget projectCard(
                         ? const SizedBox()
                         : IconButton(
                             tooltip: web.toString(),
+                            disabledColor: Colors.white,
                             onPressed: () async {
                               await launchUrl(web);
                             },
