@@ -1,13 +1,15 @@
+import 'dart:async';
 import 'dart:ui';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
-import 'package:khj/src/model/project_class.dart';
+// import 'package:go_router/go_router.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'widgets/profile_card.dart';
-
-import '../src/model/personal_info.dart';
 import 'package:intl/intl.dart';
 import '../generated/l10n.dart';
-import 'theme/theme.dart';
+import 'widgets/profile_card.dart';
+import '../src/model/project_class.dart';
+import '../src/pages/settings.dart';
+import '../src/model/personal_info.dart';
 import 'model/project_list.dart';
 import '../main.dart';
 
@@ -21,9 +23,20 @@ class Portfolio extends StatefulWidget {
 class _PortfolioState extends State<Portfolio> {
   final GlobalKey footerButton = GlobalKey();
   final myProfile = Profile();
+
+  // Reference ref = FirebaseStorage.instance.ref().child('hyunjin-resume');
+  // Reference ref = FirebaseStorage.instance
+  //     .refFromURL("gs://portfolio-khj.appspot.com/angry_wolfrik.png");
+
+  Reference ref = FirebaseStorage.instance.ref();
   @override
   void initState() {
     super.initState();
+  }
+
+  Future<void> openResume(Reference ref) async {
+    await launchUrl(Uri.parse(
+        'https://firebasestorage.googleapis.com/v0/b/portfolio-khj.appspot.com/o/angry_wolfrik.png?alt=media&token=65d06023-5f96-4780-b2e2-6b9c2f40ad7b'));
   }
 
   @override
@@ -176,10 +189,41 @@ class _PortfolioState extends State<Portfolio> {
               );
               await launchUrl(emailLaunchUri);
             },
+          ),
+          ListTile(
+            leading: const ImageIcon(
+              AssetImage('assets/icons/github-mark.png'),
+              size: 24,
+            ),
+            title: const Text('Github (this site)'),
+            trailing: const Icon(Icons.open_in_new_outlined),
+            onTap: () async {
+              await launchUrl(Uri.parse('https://github.com/koriai/portfolio'));
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.download_outlined),
+            title: const Text('Download Resume'),
+            trailing: const Icon(Icons.open_in_new_outlined),
+            onTap: () async => await openResume(ref),
+          ),
+          ListTile(
+            leading: const Icon(Icons.settings_outlined),
+            title: const Text('Settings'),
+            onTap: () {
+              // GoRouter.of(context).go('/settings');
+              Navigator.of(context).push(
+                MaterialPageRoute<void>(
+                  builder: (context) => const Settings(),
+                  settings: const RouteSettings(name: '/settings'),
+                ),
+              );
+            },
           )
         ],
       ),
     );
+
     return Scaffold(
       appBar: AppBar(
         title: Text(S.of(context).apptitle),
