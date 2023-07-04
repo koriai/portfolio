@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:go_router/go_router.dart';
+import 'src/pages/pages.dart';
 import '../generated/l10n.dart';
 import 'firebase_options.dart';
 import 'src/theme/theme.dart';
@@ -61,6 +62,12 @@ class MyApp extends StatelessWidget {
             return const Portfolio();
           },
         ),
+        GoRoute(
+          path: '/settings',
+          builder: (context, state) {
+            return const Settings();
+          },
+        )
       ]);
 
   /// redirect pages by Conditions of Server or User Auth

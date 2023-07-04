@@ -4,6 +4,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import '../../generated/l10n.dart';
 
 profile(BuildContext context) {
+  final screenWidth = MediaQuery.of(context).size.width.toInt();
   final myCircleAvatar = ClipOval(
       child: CircleAvatar(
     minRadius: 24,
@@ -16,7 +17,7 @@ profile(BuildContext context) {
     children: [
       /// email
       IconButton(
-        tooltip: 'send email',
+        tooltip: 'Send email',
         onPressed: () async {
           final Uri emailLaunchUri = Uri(
             scheme: 'mailto',
@@ -83,21 +84,23 @@ profile(BuildContext context) {
         width: double.infinity,
         child: Card(
             margin: const EdgeInsets.all(8.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                myCircleAvatar,
-                Expanded(
-                  child: ListTile(
-                    title: Text(
-                      S.of(context).name,
-                      style: const TextStyle(fontWeight: FontWeight.bold),
-                    ),
-                    subtitle: const Text('bustina9@gmaill.com'),
-                  ),
-                ),
-                snsButtons,
-              ],
-            ))),
+            child: (screenWidth < 300)
+                ? myCircleAvatar
+                : Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      myCircleAvatar,
+                      Expanded(
+                        child: ListTile(
+                          title: Text(
+                            S.of(context).name,
+                            style: const TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                          subtitle: const Text('bustina9@gmaill.com'),
+                        ),
+                      ),
+                      snsButtons,
+                    ],
+                  ))),
   );
 }

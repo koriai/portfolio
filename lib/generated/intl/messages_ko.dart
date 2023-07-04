@@ -41,8 +41,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "gllimDescription": MessageLookupByLibrary.simpleMessage(
             "입력 문자열을 분석하여 해당하는 그림을 제공하는 번역서비스"),
         "gllimTitle": MessageLookupByLibrary.simpleMessage("GLLIM"),
+        "isDarkMode": MessageLookupByLibrary.simpleMessage("다크모드"),
+        "language": MessageLookupByLibrary.simpleMessage("언어"),
         "name": MessageLookupByLibrary.simpleMessage("김현진"),
         "packagesTitle": MessageLookupByLibrary.simpleMessage("패키지"),
+        "settings": MessageLookupByLibrary.simpleMessage("설정"),
         "srBackDes1":
             MessageLookupByLibrary.simpleMessage("Python Django REST API 활용"),
         "srBackDes2":

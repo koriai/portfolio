@@ -80,6 +80,36 @@ class S {
     );
   }
 
+  /// `Settings`
+  String get settings {
+    return Intl.message(
+      'Settings',
+      name: 'settings',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Dark Mode`
+  String get isDarkMode {
+    return Intl.message(
+      'Dark Mode',
+      name: 'isDarkMode',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Language`
+  String get language {
+    return Intl.message(
+      'Language',
+      name: 'language',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Analyze Commnets of YouTube content, and make a report`
   String get srDescription {
     return Intl.message(

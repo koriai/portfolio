@@ -7,33 +7,11 @@ const double projectCardHeight = 720.0;
 const double projectCardWidth = 480.0;
 
 class Themes {
-  static final light = ThemeData(
+  static final light = ThemeData.light().copyWith(
     useMaterial3: true,
     primaryColor: const Color(0xff00838F),
-    primaryColorLight: const Color(0xff4fb3bf),
-    primaryColorDark: const Color(0xff005662),
-    colorScheme: const ColorScheme.light(
-      primary: Color(0xff005662),
-      surface: Color(0xff4fb3bf),
-    ),
-    elevatedButtonTheme: ElevatedButtonThemeData(
-        style: ButtonStyle(
-      foregroundColor: MaterialStateProperty.all(Colors.white),
-      textStyle:
-          MaterialStateProperty.all(const TextStyle(color: Colors.white)),
-      backgroundColor: MaterialStateProperty.all(const Color(0xff00838F)),
-    )),
-    textTheme: Typography.blackRedmond.copyWith(),
-    floatingActionButtonTheme: const FloatingActionButtonThemeData(),
-    dividerTheme: const DividerThemeData(
-        color: Color.fromRGBO(158, 158, 158, 1),
-        thickness: 1,
-        indent: 1.0,
-        endIndent: 1.0),
-    drawerTheme: const DrawerThemeData(
-      elevation: 8,
-      backgroundColor: Color(0xffFFFFFF),
-    ),
+    // primaryColorLight: const Color(0xff4fb3bf),
+    // primaryColorDark: const Color(0xff005662),
     pageTransitionsTheme: const PageTransitionsTheme(builders: {
       TargetPlatform.android: FadeUpwardsPageTransitionsBuilder(),
       TargetPlatform.iOS: CupertinoPageTransitionsBuilder(),
@@ -41,23 +19,17 @@ class Themes {
       TargetPlatform.macOS: CupertinoPageTransitionsBuilder(),
       TargetPlatform.windows: FadeUpwardsPageTransitionsBuilder(),
     }),
-    listTileTheme: const ListTileThemeData(
-      selectedTileColor: Color(0xff00838F),
-      selectedColor: Colors.white,
+    appBarTheme: const AppBarTheme(
+      backgroundColor: Color(0xff00838F),
+      foregroundColor: Colors.white,
+      titleTextStyle: TextStyle(color: Colors.white),
+      iconTheme: IconThemeData(color: Colors.white),
     ),
+    cardColor: Colors.white,
     cardTheme: const CardTheme(
-        elevation: 8,
-        color: Colors.white,
-        surfaceTintColor: Colors.white,
-        shape: RoundedRectangleBorder(
-          side: BorderSide(width: 1.0, color: Colors.black),
-          borderRadius: BorderRadius.all(
-            Radius.circular(8.0),
-          ),
-        ),
-        shadowColor: Colors.black),
-    dialogTheme: const DialogTheme(iconColor: Colors.black),
-    snackBarTheme: const SnackBarThemeData(actionTextColor: Colors.white),
+      color: Colors.white,
+      shadowColor: Colors.black,
+    ),
   );
 
   static final dark = ThemeData.dark().copyWith(
