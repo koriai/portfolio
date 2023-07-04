@@ -138,13 +138,15 @@ class _PortfolioState extends State<Portfolio> {
             ),
           ),
           ListTile(
+            leading: const Icon(Icons.home_outlined),
             title: const Text('Home'),
             onTap: () {
               Navigator.pop(context);
             },
           ),
           ListTile(
-            title: const Text('About'),
+            leading: const Icon(Icons.info_outline),
+            title: const Text('Opensource License'),
             onTap: () => Navigator.of(context).push(
               MaterialPageRoute<void>(
                 builder: (context) => Theme(
@@ -165,24 +167,16 @@ class _PortfolioState extends State<Portfolio> {
             ),
           ),
           ListTile(
-            title: Text('Contact'),
+            leading: const Icon(Icons.mail_outline),
+            title: const Text('Mail'),
             onTap: () async {
-              await showDialog(
-                  context: context,
-                  builder: (context) => AlertDialog(
-                        title: Text('Contact'),
-                        content: Text('Contact me by email'),
-                        actions: [
-                          TextButton(
-                            onPressed: () {
-                              Navigator.pop(context);
-                            },
-                            child: Text('OK'),
-                          ),
-                        ],
-                      ));
+              final Uri emailLaunchUri = Uri(
+                scheme: 'mailto',
+                path: 'bustina9@gmail.com',
+              );
+              await launchUrl(emailLaunchUri);
             },
-          ),
+          )
         ],
       ),
     );
