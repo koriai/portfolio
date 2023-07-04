@@ -13,6 +13,9 @@ import '../src/model/personal_info.dart';
 import 'model/project_list.dart';
 import '../main.dart';
 
+const fileRef =
+    'https://firebasestorage.googleapis.com/v0/b/portfolio-khj.appspot.com/o/KimHyunJin-Resume.pdf?alt=media&token=0d0318c6-6f27-4bd4-99bb-47f74a6fd0a1';
+
 class Portfolio extends StatefulWidget {
   const Portfolio({super.key});
 
@@ -35,8 +38,7 @@ class _PortfolioState extends State<Portfolio> {
   }
 
   Future<void> openResume(Reference ref) async {
-    await launchUrl(Uri.parse(
-        'https://firebasestorage.googleapis.com/v0/b/portfolio-khj.appspot.com/o/angry_wolfrik.png?alt=media&token=65d06023-5f96-4780-b2e2-6b9c2f40ad7b'));
+    await launchUrl(Uri.parse(fileRef));
   }
 
   @override
@@ -195,7 +197,7 @@ class _PortfolioState extends State<Portfolio> {
               AssetImage('assets/icons/github-mark.png'),
               size: 24,
             ),
-            title: const Text('Github (this site)'),
+            title: const Text('Github (source of this site)'),
             trailing: const Icon(Icons.open_in_new_outlined),
             onTap: () async {
               await launchUrl(Uri.parse('https://github.com/koriai/portfolio'));
