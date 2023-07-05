@@ -9,7 +9,11 @@ Project projectReport(BuildContext context) {
       web: Uri.parse('https://app.koriai.com/'),
       aos: Uri.parse(
           'https://play.google.com/store/apps/details?id=com.koriai.report'),
-      image: Image.asset('assets/srreport_thumbnail.png'),
+      images: [
+        Image.asset('srreport-1.png'),
+        Image.asset('srreport-2.png'),
+        Image.asset('assets/sr_report_pipe.png'),
+      ],
       description: S.of(context).srDescription,
       frontEndDescription: [
         S.of(context).srFrontDes1,
@@ -26,10 +30,7 @@ Project projectReport(BuildContext context) {
         S.of(context).srCloudDes2,
         S.of(context).srCloudDes3
       ],
-      packages: [
-        'firebase',
-        'firebase'
-      ]);
+      packages: ['firebase', 'firebase']);
 }
 
 /// Total war warhammer roster project
@@ -37,7 +38,10 @@ Project projectTTWRoster(context) {
   return Project(
       title: S.of(context).ttwTitle,
       web: Uri.parse('https://ttw-roster.web.app/'),
-      image: Image.asset('assets/ttwroster_thumbnail.png'),
+      images: [
+        Image.asset('assets/ttw-1.png'),
+        Image.asset('assets/ttw-2.png'),
+      ],
       description: S.of(context).ttwDescription,
       frontEndDescription: [
         S.of(context).ttwFrontDes1,
@@ -46,9 +50,7 @@ Project projectTTWRoster(context) {
         S.of(context).ttwBackDes1,
         S.of(context).ttwBackDes2,
       ],
-      cloudDescription: [
-        S.of(context).ttwCloudDes1
-      ]);
+      cloudDescription: [S.of(context).ttwCloudDes1]);
 }
 
 /// clips-u project
@@ -56,7 +58,10 @@ Project projectClips(context) {
   return Project(
       title: S.of(context).clipsTitle,
       web: Uri.parse('https://clips-u.web.app/'),
-      image: Image.asset('assets/clips_thumbnail.png'),
+      images: [
+        Image.asset('assets/clips-1.png'),
+        Image.asset('assets/clips-2.png'),
+      ],
       description: S.of(context).clipsDescription,
       frontEndDescription: [
         S.of(context).clipsFrontDes1,
@@ -72,7 +77,7 @@ Project projectClips(context) {
 Project projectGllim(context) {
   return Project(
     title: S.of(context).gllimTitle,
-    image: Image.asset('assets/clips_thumbnail.png'),
+    images: [Image.asset('assets/clips_thumbnail.png')],
     description: S.of(context).gllimDescription,
   );
 }

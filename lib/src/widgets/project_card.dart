@@ -7,7 +7,7 @@ Widget projectCard(
   BuildContext context,
   String title, {
   Uri? web,
-  required Image image,
+  required List<Image> images,
   required String description,
   List<String> frontEndDescription = const [],
   List<String> backEndDescription = const [],
@@ -21,11 +21,13 @@ Widget projectCard(
   final frontEndDesBox = frontEndDescription.map((e) => Text('  $e')).toList();
   final backEndDesBox = backEndDescription.map((e) => Text('  $e')).toList();
   final cloudDesBox = cloudDescription.map((e) => Text('  $e')).toList();
+  final _width = (screenWidth != null) ? screenWidth : projectCardWidth;
 
+  final PageController _controller = PageController();
   return Card(
     child: SizedBox(
       height: projectCardHeight,
-      width: (screenWidth != null) ? screenWidth : projectCardWidth,
+      width: _width,
       child: Padding(
         padding: const EdgeInsets.fromLTRB(12, 12, 12, 6),
         child: ListView(
@@ -74,7 +76,44 @@ Widget projectCard(
                               size: 24,
                             )),
                   ]),
-                  subtitle: SizedBox(height: 240, child: image),
+                  subtitle: SizedBox(
+                    height: 240,
+                    width: _width,
+                    child: PageView(
+                      controller: _controller,
+                      physics: const NeverScrollableScrollPhysics(),
+                      children: List.generate(images.length, (index) {
+                        final image = images[index];
+                        return Center(
+                          child: ListTile(
+                            leading: (index == 0)
+                                ? null
+                                : IconButton(
+                                    icon: const Icon(Icons.arrow_back),
+                                    onPressed: () {
+                                      _controller.previousPage(
+                                          duration:
+                                              const Duration(milliseconds: 500),
+                                          curve: Curves.ease);
+                                    },
+                                  ),
+                            title: image,
+                            trailing: (index == images.length - 1)
+                                ? null
+                                : IconButton(
+                                    icon: const Icon(Icons.arrow_forward),
+                                    onPressed: () {
+                                      _controller.nextPage(
+                                          duration:
+                                              const Duration(milliseconds: 500),
+                                          curve: Curves.ease);
+                                    },
+                                  ),
+                          ),
+                        );
+                      }),
+                    ),
+                  ),
                 ),
                 const SizedBox(height: 8),
                 Center(

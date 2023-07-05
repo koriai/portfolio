@@ -21,7 +21,7 @@ class Project {
   final Uri? aos;
 
   /// image of the project
-  final Image image;
+  final List<Image> images;
 
   /// description of the project
   final String description;
@@ -34,7 +34,7 @@ class Project {
 
   Project(
       {required this.title,
-      required this.image,
+      required this.images,
       required this.description,
       this.web,
       this.ios,
@@ -50,7 +50,7 @@ class Project {
         web: web,
         ios: ios,
         aos: aos,
-        image: image,
+        images: images,
         description: description,
         frontEndDescription: frontEndDescription,
         backEndDescription: backEndDescription,
