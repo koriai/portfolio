@@ -155,7 +155,7 @@ class _PortfolioState extends State<Portfolio> {
             ),
           ),
           ListTile(
-            leading: const Icon(Icons.home_outlined),
+            leading: const Icon(Icons.home),
             title: Text(S.of(context).home),
             onTap: () {
               Navigator.pop(context);
@@ -186,7 +186,7 @@ class _PortfolioState extends State<Portfolio> {
           Tooltip(
               message: 'mailto://bustina9@gmail.com',
               child: ListTile(
-                leading: const Icon(Icons.mail_outline),
+                leading: const Icon(Icons.mail),
                 title: Text(S.of(context).mail),
                 onTap: () async {
                   final Uri emailLaunchUri = Uri(
@@ -211,13 +211,13 @@ class _PortfolioState extends State<Portfolio> {
                 },
               )),
           ListTile(
-            leading: const Icon(Icons.download_outlined),
+            leading: const Icon(Icons.download),
             title: Text(S.of(context).resume),
             trailing: const Icon(Icons.open_in_new_outlined),
             onTap: () async => await openResume(ref),
           ),
           ListTile(
-            leading: const Icon(Icons.settings_outlined),
+            leading: const Icon(Icons.settings),
             title: Text(S.of(context).settings),
             onTap: () {
               // GoRouter.of(context).go('/settings');
@@ -235,7 +235,11 @@ class _PortfolioState extends State<Portfolio> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(S.of(context).apptitle),
+        title: Text(
+          S.of(context).apptitle,
+          style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 36),
+        ),
+
         centerTitle: true,
         // actions: [
         //   changeThemeModeButton,

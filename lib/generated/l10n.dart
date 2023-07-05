@@ -210,30 +210,30 @@ class S {
     );
   }
 
-  /// `front-end`
+  /// `Front-end`
   String get frontendTitle {
     return Intl.message(
-      'front-end',
+      'Front-end',
       name: 'frontendTitle',
       desc: '',
       args: [],
     );
   }
 
-  /// `back-end`
+  /// `Back-end`
   String get backendTitle {
     return Intl.message(
-      'back-end',
+      'Back-end',
       name: 'backendTitle',
       desc: '',
       args: [],
     );
   }
 
-  /// `cloud`
+  /// `Cloud`
   String get cloudTitle {
     return Intl.message(
-      'cloud',
+      'Cloud',
       name: 'cloudTitle',
       desc: '',
       args: [],
@@ -440,10 +440,10 @@ class S {
     );
   }
 
-  /// `GLLIM`
+  /// `GLLIM (closed)`
   String get gllimTitle {
     return Intl.message(
-      'GLLIM',
+      'GLLIM (closed)',
       name: 'gllimTitle',
       desc: '',
       args: [],

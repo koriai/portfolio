@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 
 class Profile {
   static const String name = "Hyunjin Kim";
@@ -11,8 +12,11 @@ class Profile {
   Profile() {
     myCircleAvatar = ClipOval(
         child: CircleAvatar(
-      minRadius: 24,
-      child: Image.network(profilePicUrl),
-    ));
+            minRadius: 24,
+            child: CachedNetworkImage(
+              imageUrl: profilePicUrl,
+              placeholder: (context, url) => Image.asset('profile.png'),
+            ) // Image.network(profilePicUrl),
+            ));
   }
 }

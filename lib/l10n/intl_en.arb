@@ -15,9 +15,9 @@
     "clipsTitle": "CLIP-u",
     "clipsDescription": "This web provides users to watch clips",
     "packagesTitle": "PACKAGES ",
-    "frontendTitle": "front-end",
-    "backendTitle": "back-end",
-    "cloudTitle": "cloud",
+    "frontendTitle": "Front-end",
+    "backendTitle": "Back-end",
+    "cloudTitle": "Cloud",
     "srFrontDes1": "Flutter web & app",
     "srFrontDes2": "Firebase uses",
     "srFrontDes3": "Korean & English support",
@@ -38,6 +38,6 @@
     "clipsFrontDes3": "CLIPS는",
     "clipsCloudDes1": "firebase firestore, managing clips",
     "clipsCloudDes2": "firebase hosting",
-    "gllimTitle": "GLLIM",
+    "gllimTitle": "GLLIM (closed)",
     "gllimDescription": "Analyze & find pictures with words, Translation"
 }

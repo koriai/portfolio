@@ -77,7 +77,10 @@ Project projectClips(context) {
 Project projectGllim(context) {
   return Project(
     title: S.of(context).gllimTitle,
-    images: [Image.asset('assets/clips_thumbnail.png')],
+    images: [
+      Image.asset('assets/gllim-1.png'),
+      Image.asset('assets/gllim-2.png'),
+    ],
     description: S.of(context).gllimDescription,
   );
 }

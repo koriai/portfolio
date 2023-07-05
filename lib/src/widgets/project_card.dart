@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
-import '../../generated/l10n.dart';
 import '../theme/theme.dart';
 
 Widget projectCard(
@@ -21,13 +20,13 @@ Widget projectCard(
   final frontEndDesBox = frontEndDescription.map((e) => Text('  $e')).toList();
   final backEndDesBox = backEndDescription.map((e) => Text('  $e')).toList();
   final cloudDesBox = cloudDescription.map((e) => Text('  $e')).toList();
-  final _width = (screenWidth != null) ? screenWidth : projectCardWidth;
+  final cardWidth = (screenWidth != null) ? screenWidth : projectCardWidth;
 
-  final PageController _controller = PageController();
+  final PageController pageController = PageController();
   return Card(
     child: SizedBox(
       height: projectCardHeight,
-      width: _width,
+      width: cardWidth,
       child: Padding(
         padding: const EdgeInsets.fromLTRB(12, 12, 12, 6),
         child: ListView(
@@ -37,13 +36,18 @@ Widget projectCard(
                   title: Row(children: [
                     Expanded(
                       child: SizedBox(
-                        height: 24,
-                        child: Text(
-                          title,
-                          textAlign: TextAlign.center,
-                        ),
+                        height: 36,
+                        child: Text(title,
+                            textAlign: TextAlign.center,
+                            style: const TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                            )),
                       ),
                     ),
+                    (ios == null && aos == null && web == null)
+                        ? const SizedBox()
+                        : const Text('links'),
                     (ios == null)
                         ? const SizedBox()
                         : IconButton(
@@ -78,9 +82,9 @@ Widget projectCard(
                   ]),
                   subtitle: SizedBox(
                     height: 240,
-                    width: _width,
+                    width: cardWidth,
                     child: PageView(
-                      controller: _controller,
+                      controller: pageController,
                       physics: const NeverScrollableScrollPhysics(),
                       children: List.generate(images.length, (index) {
                         final image = images[index];
@@ -91,19 +95,19 @@ Widget projectCard(
                                 : IconButton(
                                     icon: const Icon(Icons.arrow_back),
                                     onPressed: () {
-                                      _controller.previousPage(
+                                      pageController.previousPage(
                                           duration:
                                               const Duration(milliseconds: 500),
                                           curve: Curves.ease);
                                     },
                                   ),
-                            title: image,
+                            title: SizedBox(height: 240, child: image),
                             trailing: (index == images.length - 1)
                                 ? null
                                 : IconButton(
                                     icon: const Icon(Icons.arrow_forward),
                                     onPressed: () {
-                                      _controller.nextPage(
+                                      pageController.nextPage(
                                           duration:
                                               const Duration(milliseconds: 500),
                                           curve: Curves.ease);
@@ -128,28 +132,58 @@ Widget projectCard(
               [
                 if (frontEndDescription.isNotEmpty) const Divider(),
                 if (frontEndDescription.isNotEmpty)
-                  Text(
-                    S.of(context).frontendTitle,
-                    style: const TextStyle(fontWeight: FontWeight.bold),
+                  const Text.rich(
+                    TextSpan(children: [
+                      WidgetSpan(
+                          child: Icon(
+                        Icons.phone_android_outlined,
+                        size: 16,
+                      )),
+                      TextSpan(
+                        text: " Front-end",
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                    ]),
                   ),
+                if (frontEndDescription.isNotEmpty) const SizedBox(height: 8),
               ] +
               frontEndDesBox +
               [
                 if (backEndDescription.isNotEmpty) const Divider(),
                 if (backEndDescription.isNotEmpty)
-                  Text(
-                    S.of(context).backendTitle,
-                    style: const TextStyle(fontWeight: FontWeight.bold),
+                  const Text.rich(
+                    TextSpan(children: [
+                      WidgetSpan(
+                          child: Icon(
+                        Icons.storage_sharp,
+                        size: 16,
+                      )),
+                      TextSpan(
+                        text: " Back-end",
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                    ]),
                   ),
+                if (backEndDescription.isNotEmpty) const SizedBox(height: 8),
               ] +
               backEndDesBox +
               [
                 if (cloudDescription.isNotEmpty) const Divider(),
                 if (cloudDescription.isNotEmpty)
-                  Text(
-                    S.of(context).cloudTitle,
-                    style: const TextStyle(fontWeight: FontWeight.bold),
+                  const Text.rich(
+                    TextSpan(children: [
+                      WidgetSpan(
+                          child: Icon(
+                        Icons.cloud_circle_rounded,
+                        size: 16,
+                      )),
+                      TextSpan(
+                        text: " Cloud",
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                    ]),
                   ),
+                if (cloudDescription.isNotEmpty) const SizedBox(height: 8),
               ] +
               cloudDesBox,
         ),

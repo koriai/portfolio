@@ -24,7 +24,7 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "apptitle": MessageLookupByLibrary.simpleMessage(
             "HyunJin\'s Flutter Portfolio"),
-        "backendTitle": MessageLookupByLibrary.simpleMessage("back-end"),
+        "backendTitle": MessageLookupByLibrary.simpleMessage("Back-end"),
         "clipsCloudDes1": MessageLookupByLibrary.simpleMessage(
             "firebase firestore, managing clips"),
         "clipsCloudDes2":
@@ -36,11 +36,11 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("go_router & media support"),
         "clipsFrontDes3": MessageLookupByLibrary.simpleMessage("CLIPS는"),
         "clipsTitle": MessageLookupByLibrary.simpleMessage("CLIP-u"),
-        "cloudTitle": MessageLookupByLibrary.simpleMessage("cloud"),
-        "frontendTitle": MessageLookupByLibrary.simpleMessage("front-end"),
+        "cloudTitle": MessageLookupByLibrary.simpleMessage("Cloud"),
+        "frontendTitle": MessageLookupByLibrary.simpleMessage("Front-end"),
         "gllimDescription": MessageLookupByLibrary.simpleMessage(
             "Analyze & find pictures with words, Translation"),
-        "gllimTitle": MessageLookupByLibrary.simpleMessage("GLLIM"),
+        "gllimTitle": MessageLookupByLibrary.simpleMessage("GLLIM (closed)"),
         "home": MessageLookupByLibrary.simpleMessage("home"),
         "isDarkMode": MessageLookupByLibrary.simpleMessage("Theme Mode"),
         "language": MessageLookupByLibrary.simpleMessage("Language"),

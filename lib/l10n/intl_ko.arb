@@ -1,5 +1,5 @@
 {
-    "apptitle": "현진's Flutter Portfolio",
+    "apptitle": "현진의 포트폴리오",
     "name": "김현진",
     "srTitle": "SR 리포트",
     "settings": "설정",
@@ -38,6 +38,6 @@
     "clipsFrontDes3": "CLIPS는",
     "clipsCloudDes1": "firebase firestore에서 클립 관리기능",
     "clipsCloudDes2": "firebase hosting으로 호스팅",
-    "gllimTitle": "GLLIM",
+    "gllimTitle": "GLLIM (closed)",
     "gllimDescription": "입력 문자열을 분석하여 해당하는 그림을 제공하는 번역서비스"
 }

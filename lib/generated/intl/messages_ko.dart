@@ -22,8 +22,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "apptitle":
-            MessageLookupByLibrary.simpleMessage("현진\'s Flutter Portfolio"),
+        "apptitle": MessageLookupByLibrary.simpleMessage("현진의 포트폴리오"),
         "backendTitle": MessageLookupByLibrary.simpleMessage("백엔드"),
         "clipsCloudDes1": MessageLookupByLibrary.simpleMessage(
             "firebase firestore에서 클립 관리기능"),
@@ -40,7 +39,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "frontendTitle": MessageLookupByLibrary.simpleMessage("프론트엔드"),
         "gllimDescription": MessageLookupByLibrary.simpleMessage(
             "입력 문자열을 분석하여 해당하는 그림을 제공하는 번역서비스"),
-        "gllimTitle": MessageLookupByLibrary.simpleMessage("GLLIM"),
+        "gllimTitle": MessageLookupByLibrary.simpleMessage("GLLIM (closed)"),
         "home": MessageLookupByLibrary.simpleMessage("홈"),
         "isDarkMode": MessageLookupByLibrary.simpleMessage("다크모드"),
         "language": MessageLookupByLibrary.simpleMessage("언어"),
