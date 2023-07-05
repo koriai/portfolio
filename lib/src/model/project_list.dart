@@ -10,8 +10,8 @@ Project projectReport(BuildContext context) {
       aos: Uri.parse(
           'https://play.google.com/store/apps/details?id=com.koriai.report'),
       images: [
-        Image.asset('srreport-1.png'),
-        Image.asset('srreport-2.png'),
+        Image.asset('assets/srreport-1.png'),
+        Image.asset('assets/srreport-2.png'),
         Image.asset('assets/sr_report_pipe.png'),
       ],
       description: S.of(context).srDescription,
