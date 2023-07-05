@@ -41,10 +41,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "gllimDescription": MessageLookupByLibrary.simpleMessage(
             "Analyze & find pictures with words, Translation"),
         "gllimTitle": MessageLookupByLibrary.simpleMessage("GLLIM"),
-        "isDarkMode": MessageLookupByLibrary.simpleMessage("Dark Mode"),
+        "home": MessageLookupByLibrary.simpleMessage("home"),
+        "isDarkMode": MessageLookupByLibrary.simpleMessage("Theme Mode"),
         "language": MessageLookupByLibrary.simpleMessage("Language"),
+        "mail": MessageLookupByLibrary.simpleMessage("Mail"),
         "name": MessageLookupByLibrary.simpleMessage("HyunJin Kim"),
+        "openSourceLicense":
+            MessageLookupByLibrary.simpleMessage("Open Source License"),
         "packagesTitle": MessageLookupByLibrary.simpleMessage("PACKAGES "),
+        "resume": MessageLookupByLibrary.simpleMessage("Resume"),
         "settings": MessageLookupByLibrary.simpleMessage("Settings"),
         "srBackDes1":
             MessageLookupByLibrary.simpleMessage("Python Django REST API use"),

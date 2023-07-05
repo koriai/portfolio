@@ -140,10 +140,12 @@ class _PortfolioState extends State<Portfolio> {
                     child: myProfile.myCircleAvatar,
                   ),
                   const SizedBox(height: 8),
-                  Text(
-                    S.of(context).name,
-                    style: const TextStyle(color: Colors.white),
-                  ),
+                  SizedBox(
+                      height: 36,
+                      child: Text(
+                        S.of(context).name,
+                        style: const TextStyle(color: Colors.white),
+                      )),
                   Text(
                     myProfile.email,
                     style: const TextStyle(color: Colors.white),
@@ -154,14 +156,14 @@ class _PortfolioState extends State<Portfolio> {
           ),
           ListTile(
             leading: const Icon(Icons.home_outlined),
-            title: const Text('Home'),
+            title: Text(S.of(context).home),
             onTap: () {
               Navigator.pop(context);
             },
           ),
           ListTile(
             leading: const Icon(Icons.info_outline),
-            title: const Text('Opensource License'),
+            title: Text(S.of(context).openSourceLicense),
             onTap: () => Navigator.of(context).push(
               MaterialPageRoute<void>(
                 builder: (context) => Theme(
@@ -181,37 +183,42 @@ class _PortfolioState extends State<Portfolio> {
               ),
             ),
           ),
-          ListTile(
-            leading: const Icon(Icons.mail_outline),
-            title: const Text('Mail'),
-            onTap: () async {
-              final Uri emailLaunchUri = Uri(
-                scheme: 'mailto',
-                path: 'bustina9@gmail.com',
-              );
-              await launchUrl(emailLaunchUri);
-            },
-          ),
-          ListTile(
-            leading: const ImageIcon(
-              AssetImage('assets/icons/github-mark.png'),
-              size: 24,
-            ),
-            title: const Text('Github (source of this site)'),
-            trailing: const Icon(Icons.open_in_new_outlined),
-            onTap: () async {
-              await launchUrl(Uri.parse('https://github.com/koriai/portfolio'));
-            },
-          ),
+          Tooltip(
+              message: 'mailto://bustina9@gmail.com',
+              child: ListTile(
+                leading: const Icon(Icons.mail_outline),
+                title: Text(S.of(context).mail),
+                onTap: () async {
+                  final Uri emailLaunchUri = Uri(
+                    scheme: 'mailto',
+                    path: 'bustina9@gmail.com',
+                  );
+                  await launchUrl(emailLaunchUri);
+                },
+              )),
+          Tooltip(
+              message: 'https://github.com/koriai/portfolio',
+              child: ListTile(
+                leading: const ImageIcon(
+                  AssetImage('assets/icons/github-mark.png'),
+                  size: 24,
+                ),
+                title: const Text('Github (source of this site)'),
+                trailing: const Icon(Icons.open_in_new_outlined),
+                onTap: () async {
+                  await launchUrl(
+                      Uri.parse('https://github.com/koriai/portfolio'));
+                },
+              )),
           ListTile(
             leading: const Icon(Icons.download_outlined),
-            title: const Text('Download Resume'),
+            title: Text(S.of(context).resume),
             trailing: const Icon(Icons.open_in_new_outlined),
             onTap: () async => await openResume(ref),
           ),
           ListTile(
             leading: const Icon(Icons.settings_outlined),
-            title: const Text('Settings'),
+            title: Text(S.of(context).settings),
             onTap: () {
               // GoRouter.of(context).go('/settings');
               Navigator.of(context).push(

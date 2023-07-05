@@ -90,10 +90,10 @@ class S {
     );
   }
 
-  /// `Dark Mode`
+  /// `Theme Mode`
   String get isDarkMode {
     return Intl.message(
-      'Dark Mode',
+      'Theme Mode',
       name: 'isDarkMode',
       desc: '',
       args: [],
@@ -105,6 +105,46 @@ class S {
     return Intl.message(
       'Language',
       name: 'language',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `home`
+  String get home {
+    return Intl.message(
+      'home',
+      name: 'home',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Open Source License`
+  String get openSourceLicense {
+    return Intl.message(
+      'Open Source License',
+      name: 'openSourceLicense',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Mail`
+  String get mail {
+    return Intl.message(
+      'Mail',
+      name: 'mail',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Resume`
+  String get resume {
+    return Intl.message(
+      'Resume',
+      name: 'resume',
       desc: '',
       args: [],
     );

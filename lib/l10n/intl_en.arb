@@ -3,8 +3,12 @@
     "name": "HyunJin Kim",
     "srTitle": "SR Report",
     "settings": "Settings",
-    "isDarkMode": "Dark Mode",
+    "isDarkMode": "Theme Mode",
     "language": "Language",
+    "home": "home",
+    "openSourceLicense": "Open Source License",
+    "mail": "Mail",
+    "resume": "Resume",
     "srDescription": "Analyze Commnets of YouTube content, and make a report",
     "ttwTitle": "TTW:Warhammer3 Roster Simulator",
     "ttwDescription": "This web provides users to simulate the roster of Total War: Warhammer3",
@@ -28,7 +32,7 @@
     "ttwFrontDes3": "",
     "ttwBackDes1": "Extract game DB, convert to csv, pandas Analyze",
     "ttwBackDes2": "pandas merge, lambda, apply ",
-    "ttwCloudDes1": "firebase hosting", 
+    "ttwCloudDes1": "firebase hosting",
     "clipsFrontDes1": "Flutter web",
     "clipsFrontDes2": "go_router & media support",
     "clipsFrontDes3": "CLIPS는",
@@ -36,5 +40,4 @@
     "clipsCloudDes2": "firebase hosting",
     "gllimTitle": "GLLIM",
     "gllimDescription": "Analyze & find pictures with words, Translation"
-
 }
