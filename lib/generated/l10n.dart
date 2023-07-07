@@ -50,10 +50,10 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
-  /// `HyunJin's Flutter Portfolio`
+  /// `HyunJin's Portfolio`
   String get apptitle {
     return Intl.message(
-      'HyunJin\'s Flutter Portfolio',
+      'HyunJin\'s Portfolio',
       name: 'apptitle',
       desc: '',
       args: [],

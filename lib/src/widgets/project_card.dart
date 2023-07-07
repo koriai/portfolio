@@ -23,6 +23,106 @@ Widget projectCard(
   final cardWidth = (screenWidth != null) ? screenWidth : projectCardWidth;
 
   final PageController pageController = PageController();
+
+  final iosButton = (ios == null)
+      ? const SizedBox()
+      : IconButton(
+          tooltip: ios.toString(),
+          onPressed: () async {
+            await launchUrl(ios);
+          },
+          icon: const Icon(Icons.apple_outlined));
+  final aosButton = (aos == null)
+      ? const SizedBox()
+      : IconButton(
+          tooltip: aos.toString(),
+          onPressed: () async {
+            await launchUrl(aos);
+          },
+          icon: const ImageIcon(
+            AssetImage('assets/icons/android.png'),
+            size: 24,
+          ));
+
+  final webButton = (web == null)
+      ? const SizedBox()
+      : IconButton(
+          tooltip: web.toString(),
+          disabledColor: Colors.white,
+          onPressed: () async {
+            await launchUrl(web);
+          },
+          icon: const ImageIcon(
+            AssetImage('assets/icons/web.png'),
+            size: 24,
+          ));
+
+  List<Widget> frontendBox = [];
+  if (frontEndDescription.isNotEmpty) {
+    frontendBox.addAll(<Widget>[
+          const Divider(),
+          const Text.rich(
+            TextSpan(children: [
+              WidgetSpan(
+                  child: Icon(
+                Icons.phone_android_outlined,
+                size: 16,
+              )),
+              TextSpan(
+                text: " Front-end",
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+            ]),
+          ),
+          const SizedBox(height: 8),
+        ] +
+        frontEndDesBox);
+  }
+
+  List<Widget> backendBox = [];
+  if (backEndDescription.isNotEmpty) {
+    backendBox.addAll(<Widget>[
+          const Divider(),
+          const Text.rich(
+            TextSpan(children: [
+              WidgetSpan(
+                  child: Icon(
+                Icons.storage_sharp,
+                size: 16,
+              )),
+              TextSpan(
+                text: " Back-end",
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+            ]),
+          ),
+          const SizedBox(height: 8),
+        ] +
+        backEndDesBox);
+  }
+
+  List<Widget> cloudBox = [];
+  if (cloudDescription.isNotEmpty) {
+    cloudBox.addAll(<Widget>[
+          const Divider(),
+          const Text.rich(
+            TextSpan(children: [
+              WidgetSpan(
+                  child: Icon(
+                Icons.cloud_circle_rounded,
+                size: 16,
+              )),
+              TextSpan(
+                text: " Cloud",
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+            ]),
+          ),
+          const SizedBox(height: 8),
+        ] +
+        cloudDesBox);
+  }
+
   return Card(
     child: SizedBox(
       height: projectCardHeight,
@@ -48,37 +148,9 @@ Widget projectCard(
                     (ios == null && aos == null && web == null)
                         ? const SizedBox()
                         : const Text('links'),
-                    (ios == null)
-                        ? const SizedBox()
-                        : IconButton(
-                            tooltip: ios.toString(),
-                            onPressed: () async {
-                              await launchUrl(ios);
-                            },
-                            icon: const Icon(Icons.apple_outlined)),
-                    (aos == null)
-                        ? const SizedBox()
-                        : IconButton(
-                            tooltip: aos.toString(),
-                            onPressed: () async {
-                              await launchUrl(aos);
-                            },
-                            icon: const ImageIcon(
-                              AssetImage('assets/icons/android.png'),
-                              size: 24,
-                            )),
-                    (web == null)
-                        ? const SizedBox()
-                        : IconButton(
-                            tooltip: web.toString(),
-                            disabledColor: Colors.white,
-                            onPressed: () async {
-                              await launchUrl(web);
-                            },
-                            icon: const ImageIcon(
-                              AssetImage('assets/icons/web.png'),
-                              size: 24,
-                            )),
+                    iosButton,
+                    aosButton,
+                    webButton,
                   ]),
                   subtitle: SizedBox(
                     height: 240,
@@ -120,72 +192,11 @@ Widget projectCard(
                   ),
                 ),
                 const SizedBox(height: 8),
-                Center(
-                  child: Text(description),
-                ),
+                Center(child: Text(description)),
               ] +
-              // [
-              //   if (packages.isNotEmpty) const Divider(),
-              //   if (packages.isNotEmpty) Text(S.of(context).packagesTitle),
-              // ] +
-              // packagesBox +
-              [
-                if (frontEndDescription.isNotEmpty) const Divider(),
-                if (frontEndDescription.isNotEmpty)
-                  const Text.rich(
-                    TextSpan(children: [
-                      WidgetSpan(
-                          child: Icon(
-                        Icons.phone_android_outlined,
-                        size: 16,
-                      )),
-                      TextSpan(
-                        text: " Front-end",
-                        style: TextStyle(fontWeight: FontWeight.bold),
-                      ),
-                    ]),
-                  ),
-                if (frontEndDescription.isNotEmpty) const SizedBox(height: 8),
-              ] +
-              frontEndDesBox +
-              [
-                if (backEndDescription.isNotEmpty) const Divider(),
-                if (backEndDescription.isNotEmpty)
-                  const Text.rich(
-                    TextSpan(children: [
-                      WidgetSpan(
-                          child: Icon(
-                        Icons.storage_sharp,
-                        size: 16,
-                      )),
-                      TextSpan(
-                        text: " Back-end",
-                        style: TextStyle(fontWeight: FontWeight.bold),
-                      ),
-                    ]),
-                  ),
-                if (backEndDescription.isNotEmpty) const SizedBox(height: 8),
-              ] +
-              backEndDesBox +
-              [
-                if (cloudDescription.isNotEmpty) const Divider(),
-                if (cloudDescription.isNotEmpty)
-                  const Text.rich(
-                    TextSpan(children: [
-                      WidgetSpan(
-                          child: Icon(
-                        Icons.cloud_circle_rounded,
-                        size: 16,
-                      )),
-                      TextSpan(
-                        text: " Cloud",
-                        style: TextStyle(fontWeight: FontWeight.bold),
-                      ),
-                    ]),
-                  ),
-                if (cloudDescription.isNotEmpty) const SizedBox(height: 8),
-              ] +
-              cloudDesBox,
+              frontendBox +
+              backendBox +
+              cloudBox,
         ),
       ),
     ),

@@ -119,6 +119,7 @@ class _PortfolioState extends State<Portfolio> {
       child: ListView(
         padding: EdgeInsets.zero,
         children: [
+          /// DrawerHeader
           SizedBox(
             height: 240,
             child: DrawerHeader(
@@ -154,6 +155,8 @@ class _PortfolioState extends State<Portfolio> {
               ),
             ),
           ),
+
+          /// Drawer Menu Items
           ListTile(
             leading: const Icon(Icons.home),
             title: Text(S.of(context).home),
@@ -183,6 +186,8 @@ class _PortfolioState extends State<Portfolio> {
               ),
             ),
           ),
+
+          /// send email to me
           Tooltip(
               message: 'mailto://bustina9@gmail.com',
               child: ListTile(
@@ -196,6 +201,8 @@ class _PortfolioState extends State<Portfolio> {
                   await launchUrl(emailLaunchUri);
                 },
               )),
+
+          /// go to my github
           Tooltip(
               message: 'https://github.com/koriai/portfolio',
               child: ListTile(
@@ -210,12 +217,16 @@ class _PortfolioState extends State<Portfolio> {
                       Uri.parse('https://github.com/koriai/portfolio'));
                 },
               )),
+
+          /// get my resume
           ListTile(
             leading: const Icon(Icons.download),
             title: Text(S.of(context).resume),
             trailing: const Icon(Icons.open_in_new_outlined),
             onTap: () async => await openResume(ref),
           ),
+
+          /// go settings page
           ListTile(
             leading: const Icon(Icons.settings),
             title: Text(S.of(context).settings),
@@ -237,9 +248,8 @@ class _PortfolioState extends State<Portfolio> {
       appBar: AppBar(
         title: Text(
           S.of(context).apptitle,
-          style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 36),
+          style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 26),
         ),
-
         centerTitle: true,
         // actions: [
         //   changeThemeModeButton,
@@ -267,13 +277,6 @@ class _PortfolioState extends State<Portfolio> {
                   }),
                   child: ListView.builder(
                       restorationId: 'project_list',
-                      // prototypeItem: Card(
-                      //   color: const Color.fromRGBO(207, 216, 220, 1),
-                      //   child: SizedBox(
-                      //     height: projectCardHeight,
-                      //     width: 380,
-                      //   ),
-                      // ),
                       itemCount: projects.length,
                       shrinkWrap: true,
                       scrollDirection: Axis.horizontal,
