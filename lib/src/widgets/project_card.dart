@@ -173,7 +173,26 @@ Widget projectCard(
                                           curve: Curves.ease);
                                     },
                                   ),
-                            title: SizedBox(height: 240, child: image),
+                            title: SizedBox(
+                                height: 240,
+                                child: InkWell(
+                                    onTap: () async {
+                                      await showDialog(
+                                          context: context,
+                                          builder: (context) {
+                                            return AlertDialog(
+                                              content: image,
+                                              actions: [
+                                                ElevatedButton(
+                                                    onPressed: () {
+                                                      Navigator.pop(context);
+                                                    },
+                                                    child: const Text('close'))
+                                              ],
+                                            );
+                                          });
+                                    },
+                                    child: image)),
                             trailing: (index == images.length - 1)
                                 ? null
                                 : IconButton(
