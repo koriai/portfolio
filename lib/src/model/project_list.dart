@@ -10,13 +10,13 @@ Project projectReport(BuildContext context) {
       aos: Uri.parse(
           'https://play.google.com/store/apps/details?id=com.koriai.report'),
       images: [
-        Image.asset('assets/srreport/srreport-1.png'),
-        Image.asset('assets/srreport/srreport-2.png'),
-        Image.asset('assets/srreport/srreport-3.png'),
-        Image.asset('assets/srreport/srreport-4.png'),
-        Image.asset('assets/srreport/srreport-5.png'),
-        Image.asset('assets/srreport/srreport-6.png'),
-        Image.asset('assets/srreport/sr_report_pipe.png'),
+        const Image(image: AssetImage('assets/srreport/srreport-1.png')),
+        const Image(image: AssetImage('assets/srreport/srreport-2.png')),
+        const Image(image: AssetImage('assets/srreport/srreport-3.png')),
+        const Image(image: AssetImage('assets/srreport/srreport-4.png')),
+        const Image(image: AssetImage('assets/srreport/srreport-5.png')),
+        const Image(image: AssetImage('assets/srreport/srreport-6.png')),
+        const Image(image: AssetImage('assets/srreport/sr_report_pipe.png')),
       ],
       description: S.of(context).srDescription,
       frontEndDescription: [
@@ -43,10 +43,10 @@ Project projectTTWRoster(context) {
       title: S.of(context).ttwTitle,
       web: Uri.parse('https://ttw-roster.web.app/'),
       images: [
-        Image.asset('assets/ttw/ttw-1.png'),
-        Image.asset('assets/ttw/ttw-2.png'),
-        Image.asset('assets/ttw/ttw-3.png'),
-        Image.asset('assets/ttw/ttw-4.png'),
+        const Image(image: AssetImage('assets/ttw/ttw-1.png')),
+        const Image(image: AssetImage('assets/ttw/ttw-2.png')),
+        const Image(image: AssetImage('assets/ttw/ttw-3.png')),
+        const Image(image: AssetImage('assets/ttw/ttw-4.png')),
       ],
       description: S.of(context).ttwDescription,
       frontEndDescription: [
@@ -65,8 +65,8 @@ Project projectClips(context) {
       title: S.of(context).clipsTitle,
       web: Uri.parse('https://clips-u.web.app/'),
       images: [
-        Image.asset('assets/clips/clips-1.png'),
-        Image.asset('assets/clips/clips-2.png'),
+        const Image(image: AssetImage('assets/clips/clips-1.png')),
+        const Image(image: AssetImage('assets/clips/clips-2.png')),
       ],
       description: S.of(context).clipsDescription,
       frontEndDescription: [
@@ -84,8 +84,10 @@ Project projectGllim(context) {
   return Project(
     title: S.of(context).gllimTitle,
     images: [
-      Image.asset('assets/gllim/gllim-1.png'),
-      Image.asset('assets/gllim/gllim-2.png'),
+      const Image(image: AssetImage('assets/gllim/gllim-1.png')),
+      const Image(image: AssetImage('assets/gllim/gllim-2.png')),
+      const Image(image: AssetImage('assets/gllim/gllim-3.png')),
+      const Image(image: AssetImage('assets/gllim/gllim-4.png')),
     ],
     description: S.of(context).gllimDescription,
   );

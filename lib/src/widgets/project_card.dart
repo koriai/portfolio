@@ -176,23 +176,24 @@ Widget projectCard(
                             title: SizedBox(
                                 height: 240,
                                 child: InkWell(
-                                    onTap: () async {
-                                      await showDialog(
-                                          context: context,
-                                          builder: (context) {
-                                            return AlertDialog(
-                                              content: image,
-                                              actions: [
-                                                ElevatedButton(
-                                                    onPressed: () {
-                                                      Navigator.pop(context);
-                                                    },
-                                                    child: const Text('close'))
-                                              ],
-                                            );
-                                          });
-                                    },
-                                    child: image)),
+                                  child: Container(child: image),
+                                  onTap: () async {
+                                    await showDialog(
+                                        context: context,
+                                        builder: (context) {
+                                          return AlertDialog(
+                                            content: image,
+                                            actions: [
+                                              ElevatedButton(
+                                                  onPressed: () {
+                                                    Navigator.pop(context);
+                                                  },
+                                                  child: const Text('close'))
+                                            ],
+                                          );
+                                        });
+                                  },
+                                )),
                             trailing: (index == images.length - 1)
                                 ? null
                                 : IconButton(
