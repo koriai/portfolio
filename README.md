@@ -81,6 +81,7 @@ Here's my portfolio
 [ttw-roster.web.app](https://ttw-roster.web.app)
 
 토탈워: 워해머3 게임의 로스터를 테스트하고 유닛 능력치를 비교할수 있는 사이트입니다.
+Python pandas를 활용하여 db를 다루었습니다.
 
 | 게임 DB 버전 | 업데이트 |
 |---|---|
