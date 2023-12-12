@@ -22,15 +22,21 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "adaptiveExtension":
+            MessageLookupByLibrary.simpleMessage("Adaptive extension 패키지"),
+        "adaptiveExtensionDes1":
+            MessageLookupByLibrary.simpleMessage("마테리얼-쿠퍼티노 위젯"),
         "apptitle":
             MessageLookupByLibrary.simpleMessage("HyunJin\'s Portfolio"),
         "backendTitle": MessageLookupByLibrary.simpleMessage("Back-end"),
         "clipsCloudDes1": MessageLookupByLibrary.simpleMessage(
-            "firebase firestore, managing clips"),
+          "firebase firestore, managing clips",
+        ),
         "clipsCloudDes2":
             MessageLookupByLibrary.simpleMessage("firebase hosting"),
         "clipsDescription": MessageLookupByLibrary.simpleMessage(
-            "This web provides users to watch clips"),
+          "This web provides users to watch clips",
+        ),
         "clipsFrontDes1": MessageLookupByLibrary.simpleMessage("Flutter web"),
         "clipsFrontDes2":
             MessageLookupByLibrary.simpleMessage("go_router & media support"),
@@ -39,7 +45,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "cloudTitle": MessageLookupByLibrary.simpleMessage("Cloud"),
         "frontendTitle": MessageLookupByLibrary.simpleMessage("Front-end"),
         "gllimDescription": MessageLookupByLibrary.simpleMessage(
-            "Analyze & find pictures with words, Translation"),
+          "Analyze & find pictures with words, Translation",
+        ),
         "gllimTitle": MessageLookupByLibrary.simpleMessage("GLLIM (closed)"),
         "home": MessageLookupByLibrary.simpleMessage("home"),
         "isDarkMode": MessageLookupByLibrary.simpleMessage("Theme Mode"),
@@ -54,17 +61,21 @@ class MessageLookup extends MessageLookupByLibrary {
         "srBackDes1":
             MessageLookupByLibrary.simpleMessage("Python Django REST API use"),
         "srBackDes2": MessageLookupByLibrary.simpleMessage(
-            "With Cronjob, schedule the task"),
+          "With Cronjob, schedule the task",
+        ),
         "srBackDes3":
             MessageLookupByLibrary.simpleMessage("Pandas & Numpy use"),
         "srCloudDes1":
             MessageLookupByLibrary.simpleMessage("GCP & Google Login"),
         "srCloudDes2": MessageLookupByLibrary.simpleMessage(
-            "firebase hosting, firestore, storage, functions(TypeScript)"),
+          "firebase hosting, firestore, storage, functions(TypeScript)",
+        ),
         "srCloudDes3": MessageLookupByLibrary.simpleMessage(
-            "remote-config, analytics, crashlytics, performance"),
+          "remote-config, analytics, crashlytics, performance",
+        ),
         "srDescription": MessageLookupByLibrary.simpleMessage(
-            "Analyze Commnets of YouTube content, and make a report"),
+          "Analyze Commnets of YouTube content, and make a report",
+        ),
         "srFrontDes1":
             MessageLookupByLibrary.simpleMessage("Flutter web & app"),
         "srFrontDes2": MessageLookupByLibrary.simpleMessage("Firebase uses"),
@@ -72,17 +83,21 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Korean & English support"),
         "srTitle": MessageLookupByLibrary.simpleMessage("SR Report"),
         "ttwBackDes1": MessageLookupByLibrary.simpleMessage(
-            "Extract game DB, convert to csv, pandas Analyze"),
+          "Extract game DB, convert to csv, pandas Analyze",
+        ),
         "ttwBackDes2": MessageLookupByLibrary.simpleMessage(
-            "pandas merge, lambda, apply "),
+          "pandas merge, lambda, apply ",
+        ),
         "ttwCloudDes1":
             MessageLookupByLibrary.simpleMessage("firebase hosting"),
         "ttwDescription": MessageLookupByLibrary.simpleMessage(
-            "This web provides users to simulate the roster of Total War: Warhammer3"),
+          "This web provides users to simulate the roster of Total War: Warhammer3",
+        ),
         "ttwFrontDes1": MessageLookupByLibrary.simpleMessage("Flutter Web"),
         "ttwFrontDes2": MessageLookupByLibrary.simpleMessage("TTW는"),
         "ttwFrontDes3": MessageLookupByLibrary.simpleMessage(""),
         "ttwTitle": MessageLookupByLibrary.simpleMessage(
-            "TTW:Warhammer3 Roster Simulator")
+          "TTW:Warhammer3 Roster Simulator",
+        ),
       };
 }

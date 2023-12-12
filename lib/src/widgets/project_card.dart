@@ -5,9 +5,9 @@ import '../theme/theme.dart';
 Widget projectCard(
   BuildContext context,
   String title, {
-  Uri? web,
   required List<Image> images,
   required String description,
+  Uri? web,
   List<String> frontEndDescription = const [],
   List<String> backEndDescription = const [],
   List<String> cloudDescription = const [],
@@ -15,6 +15,7 @@ Widget projectCard(
   Uri? ios,
   Uri? aos,
   double? screenWidth,
+  bool isNew = false,
 }) {
   // final packagesBox = packages.map((e) => Text('  $e')).toList();
   final frontEndDesBox = frontEndDescription.map((e) => Text('  $e')).toList();
@@ -31,7 +32,8 @@ Widget projectCard(
           onPressed: () async {
             await launchUrl(ios);
           },
-          icon: const Icon(Icons.apple_outlined));
+          icon: const Icon(Icons.apple_outlined),
+        );
   final aosButton = (aos == null)
       ? const SizedBox()
       : IconButton(
@@ -42,7 +44,8 @@ Widget projectCard(
           icon: const ImageIcon(
             AssetImage('assets/icons/android.png'),
             size: 24,
-          ));
+          ),
+        );
 
   final webButton = (web == null)
       ? const SizedBox()
@@ -55,72 +58,88 @@ Widget projectCard(
           icon: const ImageIcon(
             AssetImage('assets/icons/web.png'),
             size: 24,
-          ));
+          ),
+        );
 
-  List<Widget> frontendBox = [];
+  final List<Widget> frontendBox = [];
   if (frontEndDescription.isNotEmpty) {
-    frontendBox.addAll(<Widget>[
-          const Divider(),
-          const Text.rich(
-            TextSpan(children: [
-              WidgetSpan(
-                  child: Icon(
-                Icons.phone_android_outlined,
-                size: 16,
-              )),
+    frontendBox.addAll(
+      <Widget>[
+            const Divider(),
+            const Text.rich(
               TextSpan(
-                text: " Front-end",
-                style: TextStyle(fontWeight: FontWeight.bold),
+                children: [
+                  WidgetSpan(
+                    child: Icon(
+                      Icons.phone_android_outlined,
+                      size: 16,
+                    ),
+                  ),
+                  TextSpan(
+                    text: ' Front-end',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                ],
               ),
-            ]),
-          ),
-          const SizedBox(height: 8),
-        ] +
-        frontEndDesBox);
+            ),
+            const SizedBox(height: 8),
+          ] +
+          frontEndDesBox,
+    );
   }
 
-  List<Widget> backendBox = [];
+  final List<Widget> backendBox = [];
   if (backEndDescription.isNotEmpty) {
-    backendBox.addAll(<Widget>[
-          const Divider(),
-          const Text.rich(
-            TextSpan(children: [
-              WidgetSpan(
-                  child: Icon(
-                Icons.storage_sharp,
-                size: 16,
-              )),
+    backendBox.addAll(
+      <Widget>[
+            const Divider(),
+            const Text.rich(
               TextSpan(
-                text: " Back-end",
-                style: TextStyle(fontWeight: FontWeight.bold),
+                children: [
+                  WidgetSpan(
+                    child: Icon(
+                      Icons.storage_sharp,
+                      size: 16,
+                    ),
+                  ),
+                  TextSpan(
+                    text: ' Back-end',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                ],
               ),
-            ]),
-          ),
-          const SizedBox(height: 8),
-        ] +
-        backEndDesBox);
+            ),
+            const SizedBox(height: 8),
+          ] +
+          backEndDesBox,
+    );
   }
 
-  List<Widget> cloudBox = [];
+  final List<Widget> cloudBox = [];
   if (cloudDescription.isNotEmpty) {
-    cloudBox.addAll(<Widget>[
-          const Divider(),
-          const Text.rich(
-            TextSpan(children: [
-              WidgetSpan(
-                  child: Icon(
-                Icons.cloud_circle_rounded,
-                size: 16,
-              )),
+    cloudBox.addAll(
+      <Widget>[
+            const Divider(),
+            const Text.rich(
               TextSpan(
-                text: " Cloud",
-                style: TextStyle(fontWeight: FontWeight.bold),
+                children: [
+                  WidgetSpan(
+                    child: Icon(
+                      Icons.cloud_circle_rounded,
+                      size: 16,
+                    ),
+                  ),
+                  TextSpan(
+                    text: ' Cloud',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                ],
               ),
-            ]),
-          ),
-          const SizedBox(height: 8),
-        ] +
-        cloudDesBox);
+            ),
+            const SizedBox(height: 8),
+          ] +
+          cloudDesBox,
+    );
   }
 
   return Card(
@@ -133,25 +152,36 @@ Widget projectCard(
           shrinkWrap: true,
           children: [
                 ListTile(
-                  title: Row(children: [
-                    Expanded(
-                      child: SizedBox(
-                        height: 36,
-                        child: Text(title,
+                  title: Row(
+                    children: [
+                      isNew
+                          ? const Icon(Icons.new_releases_outlined)
+                          : const SizedBox(),
+                      Visibility(
+                        visible: isNew,
+                        child: const Text(' NEW!!'),
+                      ),
+                      Expanded(
+                        child: SizedBox(
+                          height: 36,
+                          child: Text(
+                            title,
                             textAlign: TextAlign.center,
                             style: const TextStyle(
                               fontSize: 20,
                               fontWeight: FontWeight.bold,
-                            )),
+                            ),
+                          ),
+                        ),
                       ),
-                    ),
-                    (ios == null && aos == null && web == null)
-                        ? const SizedBox()
-                        : const Text('links'),
-                    iosButton,
-                    aosButton,
-                    webButton,
-                  ]),
+                      (ios == null && aos == null && web == null)
+                          ? const SizedBox()
+                          : const Text('links'),
+                      iosButton,
+                      aosButton,
+                      webButton,
+                    ],
+                  ),
                   subtitle: SizedBox(
                     height: 240,
                     width: cardWidth,
@@ -166,43 +196,46 @@ Widget projectCard(
                                 ? null
                                 : IconButton(
                                     icon: const Icon(Icons.arrow_back),
-                                    onPressed: () {
-                                      pageController.previousPage(
-                                          duration:
-                                              const Duration(milliseconds: 500),
-                                          curve: Curves.ease);
+                                    onPressed: () async {
+                                      await pageController.previousPage(
+                                        duration:
+                                            const Duration(milliseconds: 500),
+                                        curve: Curves.ease,
+                                      );
                                     },
                                   ),
                             title: SizedBox(
-                                height: 240,
-                                child: InkWell(
-                                  child: Container(child: image),
-                                  onTap: () async {
-                                    await showDialog(
-                                        context: context,
-                                        builder: (context) {
-                                          return AlertDialog(
-                                            content: image,
-                                            actions: [
-                                              ElevatedButton(
-                                                  onPressed: () {
-                                                    Navigator.pop(context);
-                                                  },
-                                                  child: const Text('close'))
-                                            ],
-                                          );
-                                        });
-                                  },
-                                )),
+                              height: 240,
+                              child: InkWell(
+                                child: Container(child: image),
+                                onTap: () async {
+                                  await showDialog(
+                                    context: context,
+                                    builder: (context) => AlertDialog(
+                                      content: image,
+                                      actions: [
+                                        ElevatedButton(
+                                          onPressed: () {
+                                            Navigator.pop(context);
+                                          },
+                                          child: const Text('close'),
+                                        ),
+                                      ],
+                                    ),
+                                  );
+                                },
+                              ),
+                            ),
                             trailing: (index == images.length - 1)
                                 ? null
                                 : IconButton(
                                     icon: const Icon(Icons.arrow_forward),
-                                    onPressed: () {
-                                      pageController.nextPage(
-                                          duration:
-                                              const Duration(milliseconds: 500),
-                                          curve: Curves.ease);
+                                    onPressed: () async {
+                                      await pageController.nextPage(
+                                        duration:
+                                            const Duration(milliseconds: 500),
+                                        curve: Curves.ease,
+                                      );
                                     },
                                   ),
                           ),

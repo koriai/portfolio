@@ -39,5 +39,7 @@
     "clipsCloudDes1": "firebase firestore, managing clips",
     "clipsCloudDes2": "firebase hosting",
     "gllimTitle": "GLLIM (closed)",
-    "gllimDescription": "Analyze & find pictures with words, Translation"
+    "gllimDescription": "Analyze & find pictures with words, Translation",
+    "adaptiveExtension": "Adaptive extension 패키지",
+    "adaptiveExtensionDes1": "마테리얼-쿠퍼티노 위젯"
 }

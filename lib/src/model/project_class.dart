@@ -8,6 +8,22 @@ import '../widgets/project_card.dart';
 /// [image] : image of the project
 /// [description] : description of the project
 class Project {
+
+  Project({
+    required this.title,
+    required this.images,
+    required this.description,
+    this.web,
+    this.ios,
+    this.aos,
+    this.packages = const [],
+    this.frontEndDescription = const [],
+    this.backEndDescription = const [],
+    this.cloudDescription = const [],
+    this.isNew = false,
+  }) {
+    // print('Project: $title');
+  }
   /// title of the project
   final String title;
 
@@ -26,27 +42,21 @@ class Project {
   /// description of the project
   final String description;
 
+  /// frontEndDescription
   List<String> frontEndDescription = [];
+
+  /// backEndDescription
   List<String> backEndDescription = [];
+
+  ///cloudDescription
   List<String> cloudDescription = [];
 
+  ///packages
   List<String> packages;
 
-  Project(
-      {required this.title,
-      required this.images,
-      required this.description,
-      this.web,
-      this.ios,
-      this.aos,
-      this.packages = const [],
-      this.frontEndDescription = const [],
-      this.backEndDescription = const [],
-      this.cloudDescription = const []}) {
-    // print('Project: $title');
-  }
-  Widget card(context, double? screenWidth) {
-    return projectCard(context, title,
+  /// is new project?
+  bool isNew;
+  Widget card(context, double? screenWidth) => projectCard(context, title,
         web: web,
         ios: ios,
         aos: aos,
@@ -56,6 +66,6 @@ class Project {
         backEndDescription: backEndDescription,
         cloudDescription: cloudDescription,
         packages: packages,
-        screenWidth: screenWidth);
-  }
+        screenWidth: screenWidth,
+        isNew: isNew,);
 }

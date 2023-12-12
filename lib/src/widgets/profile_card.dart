@@ -1,16 +1,17 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:cached_network_image/cached_network_image.dart';
+
 import '../../generated/l10n.dart';
 
-profile(BuildContext context) {
+Semantics profile(BuildContext context) {
   final screenWidth = MediaQuery.of(context).size.width.toInt();
   final myCircleAvatar = ClipOval(
       child: CircleAvatar(
     minRadius: 24,
     child: CachedNetworkImage(
-        imageUrl: 'https://avatars.githubusercontent.com/u/60956934?v=4'),
-  ));
+        imageUrl: 'https://avatars.githubusercontent.com/u/60956934?v=4',),
+  ),);
 
   final snsButtons = Row(
     mainAxisAlignment: MainAxisAlignment.center,
@@ -83,7 +84,7 @@ profile(BuildContext context) {
         height: 120,
         width: double.infinity,
         child: Card(
-            margin: const EdgeInsets.all(8.0),
+            margin: const EdgeInsets.all(8),
             child: (screenWidth < 300)
                 ? myCircleAvatar
                 : Row(
@@ -101,6 +102,6 @@ profile(BuildContext context) {
                       ),
                       snsButtons,
                     ],
-                  ))),
+                  ),),),
   );
 }

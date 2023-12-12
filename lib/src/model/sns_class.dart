@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
 
 class SNS {
-  final String title;
-  final Uri uri;
-  final Image image;
-  final String description;
 
   SNS({
     required this.title,
@@ -14,4 +10,8 @@ class SNS {
   }) {
     // print('SNS: $title');
   }
+  final String title;
+  final Uri uri;
+  final Image image;
+  final String description;
 }
