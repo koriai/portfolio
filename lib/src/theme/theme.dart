@@ -8,7 +8,6 @@ const double projectCardWidth = 480.0;
 
 class Themes {
   static final light = ThemeData.light().copyWith(
-    useMaterial3: true,
     primaryColor: const Color(0xff00838F),
     // primaryColorLight: const Color(0xff4fb3bf),
     // primaryColorDark: const Color(0xff005662),
@@ -33,7 +32,6 @@ class Themes {
   );
 
   static final dark = ThemeData.dark().copyWith(
-    useMaterial3: true,
     brightness: Brightness.dark,
     primaryColor: const Color(0xff212121),
     // primaryColorLight: Color(0xff484848),

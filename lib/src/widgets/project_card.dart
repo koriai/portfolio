@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../theme/theme.dart';
 
+/// 프로젝트 카드 클래스
 Widget projectCard(
   BuildContext context,
   String title, {
@@ -24,6 +25,7 @@ Widget projectCard(
 
   final PageController pageController = PageController();
 
+  /// ios 버튼
   final iosButton = (ios == null)
       ? const SizedBox()
       : IconButton(
@@ -32,6 +34,8 @@ Widget projectCard(
             await launchUrl(ios);
           },
           icon: const Icon(Icons.apple_outlined));
+
+  /// 안드로이드 버튼
   final aosButton = (aos == null)
       ? const SizedBox()
       : IconButton(
@@ -44,6 +48,7 @@ Widget projectCard(
             size: 24,
           ));
 
+  /// 웹버전 버튼
   final webButton = (web == null)
       ? const SizedBox()
       : IconButton(
@@ -57,6 +62,7 @@ Widget projectCard(
             size: 24,
           ));
 
+  /// 프론트엔트 박스
   List<Widget> frontendBox = [];
   if (frontEndDescription.isNotEmpty) {
     frontendBox.addAll(<Widget>[
@@ -79,6 +85,7 @@ Widget projectCard(
         frontEndDesBox);
   }
 
+  /// 백엔드
   List<Widget> backendBox = [];
   if (backEndDescription.isNotEmpty) {
     backendBox.addAll(<Widget>[
@@ -101,6 +108,7 @@ Widget projectCard(
         backEndDesBox);
   }
 
+  /// 클라우드
   List<Widget> cloudBox = [];
   if (cloudDescription.isNotEmpty) {
     cloudBox.addAll(<Widget>[
@@ -123,6 +131,7 @@ Widget projectCard(
         cloudDesBox);
   }
 
+  /// return project card with  ios,aos,web buttons
   return Card(
     child: SizedBox(
       height: projectCardHeight,

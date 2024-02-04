@@ -3,8 +3,12 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import '../../generated/l10n.dart';
 
+/// my profile page
 profile(BuildContext context) {
+  /// screen width
   final screenWidth = MediaQuery.of(context).size.width.toInt();
+
+  /// my circleavartar
   final myCircleAvatar = ClipOval(
       child: CircleAvatar(
     minRadius: 24,
@@ -12,6 +16,7 @@ profile(BuildContext context) {
         imageUrl: 'https://avatars.githubusercontent.com/u/60956934?v=4'),
   ));
 
+  /// my sns buttons
   final snsButtons = Row(
     mainAxisAlignment: MainAxisAlignment.center,
     children: [

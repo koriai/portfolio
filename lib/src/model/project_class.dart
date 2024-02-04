@@ -26,10 +26,16 @@ class Project {
   /// description of the project
   final String description;
 
+  /// front end description for this project
   List<String> frontEndDescription = [];
+
+  /// back end description for this project
   List<String> backEndDescription = [];
+
+  /// cloud description for this project
   List<String> cloudDescription = [];
 
+  /// List of used packages for this project
   List<String> packages;
 
   Project(
@@ -45,6 +51,8 @@ class Project {
       this.cloudDescription = const []}) {
     // print('Project: $title');
   }
+
+  /// return [Card] widget for this project
   Widget card(context, double? screenWidth) {
     return projectCard(context, title,
         web: web,

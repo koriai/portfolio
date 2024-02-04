@@ -13,9 +13,11 @@ import '../src/model/personal_info.dart';
 import 'model/project_list.dart';
 import '../main.dart';
 
-const fileRef =
-    'https://firebasestorage.googleapis.com/v0/b/portfolio-khj.appspot.com/o/KimHyunJin-Resume.pdf?alt=media&token=0d0318c6-6f27-4bd4-99bb-47f74a6fd0a1';
+/// resume 파일경로
+const resumeFileRef =
+    'https://firebasestorage.googleapis.com/v0/b/portfolio-khj.appspot.com/o/portfolio-khj.pdf?alt=media&token=2b94c7c2-8dd8-4657-b180-2d59794776d7';
 
+/// 포트폴리오
 class Portfolio extends StatefulWidget {
   const Portfolio({super.key});
 
@@ -31,20 +33,23 @@ class _PortfolioState extends State<Portfolio> {
   // Reference ref = FirebaseStorage.instance
   //     .refFromURL("gs://portfolio-khj.appspot.com/angry_wolfrik.png");
 
+  /// 파이어베이스 스토리지
   Reference ref = FirebaseStorage.instance.ref();
-  @override
-  void initState() {
-    super.initState();
-  }
 
+  /// Open resume
   Future<void> openResume(Reference ref) async {
-    await launchUrl(Uri.parse(fileRef));
+    await launchUrl(Uri.parse(resumeFileRef));
   }
 
   @override
   Widget build(BuildContext context) {
+    /// 화면 높이
     final screenHeight = MediaQuery.of(context).size.height.toInt();
+
+    /// 화면 너비
     final screenWidth = MediaQuery.of(context).size.width.toInt();
+
+    /// 프로젝트 목록
     List<Project> projects = [];
 
     /// initilize projects
@@ -59,7 +64,8 @@ class _PortfolioState extends State<Portfolio> {
 
     initProjects();
 
-    final condeLinkButton = Container(
+    /// 코드 링크 버튼
+    final codeLinkButton = Container(
       key: footerButton,
       padding: const EdgeInsets.all(1.0),
       width: double.infinity,
@@ -290,7 +296,7 @@ class _PortfolioState extends State<Portfolio> {
                                     : 480);
                       }),
                 )),
-                condeLinkButton
+                codeLinkButton
               ],
             ),
     );

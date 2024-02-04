@@ -4,6 +4,7 @@ import '../../generated/l10n.dart';
 import 'package:intl/intl.dart';
 import '../model/personal_info.dart';
 
+/// Setting page
 class Settings extends StatefulWidget {
   const Settings({super.key});
 
