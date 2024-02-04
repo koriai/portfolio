@@ -3,13 +3,14 @@
 [포트폴리오](https://portfolio-khj.web.app/#/)
 Here's my portfolio
 
-## 3 Projects ongoing
+## 4 Projects ongoing
 
 현재 3개의 프로젝트가 진행중입니다.
 
-1. SR리포트: 유튜브 댓글을 분석하여 리포트를 제공하는 웹&앱 서비스(android only)
-2. TTW 워해머3 로스터 시뮬레이터: 전략시뮬레이션 게임 토탈워: 워해머3 의 로스터를 테스트하고 유닛 능력치를 비교할수 있는 사이트입니다.
-3. 클립모음: 유튜브 클립 모음
+1. [SR리포트](app.koriai.com): 유튜브 댓글을 분석하여 리포트를 제공하는 웹&앱 서비스(android only)
+2. [TTW 워해머3 로스터 시뮬레이터](https://ttw-roster.web.app): 전략시뮬레이션 게임 토탈워: 워해머3 의 로스터를 테스트하고 유닛 능력치를 비교할수 있는 사이트입니다.
+3. 클립모음: [유튜브 클립 모음]((https://clips-u.web.app))
+4. 패키지: [adaptive_extensions](https://pub.dev/packages/adaptive_extensions)
 
 ### SR-report
 
@@ -81,6 +82,7 @@ Here's my portfolio
 [ttw-roster.web.app](https://ttw-roster.web.app)
 
 토탈워: 워해머3 게임의 로스터를 테스트하고 유닛 능력치를 비교할수 있는 사이트입니다.
+Python pandas를 활용하여 db를 다루었습니다.
 
 | 게임 DB 버전 | 업데이트 |
 |---|---|

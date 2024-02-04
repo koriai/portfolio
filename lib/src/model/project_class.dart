@@ -8,6 +8,22 @@ import '../widgets/project_card.dart';
 /// [image] : image of the project
 /// [description] : description of the project
 class Project {
+  Project({
+    required this.title,
+    required this.images,
+    required this.description,
+    this.web,
+    this.ios,
+    this.aos,
+    this.packages = const [],
+    this.frontEndDescription = const [],
+    this.backEndDescription = const [],
+    this.cloudDescription = const [],
+    this.isNew = false,
+  }) {
+    // print('Project: $title');
+  }
+
   /// title of the project
   final String title;
 
@@ -26,35 +42,25 @@ class Project {
   /// description of the project
   final String description;
 
-  /// front end description for this project
+  /// frontEndDescription
   List<String> frontEndDescription = [];
 
-  /// back end description for this project
+  /// backEndDescription
   List<String> backEndDescription = [];
 
-  /// cloud description for this project
+  ///cloudDescription
   List<String> cloudDescription = [];
 
-  /// List of used packages for this project
+  ///packages
   List<String> packages;
 
-  Project(
-      {required this.title,
-      required this.images,
-      required this.description,
-      this.web,
-      this.ios,
-      this.aos,
-      this.packages = const [],
-      this.frontEndDescription = const [],
-      this.backEndDescription = const [],
-      this.cloudDescription = const []}) {
-    // print('Project: $title');
-  }
+  /// is new project?
+  bool isNew;
 
-  /// return [Card] widget for this project
-  Widget card(context, double? screenWidth) {
-    return projectCard(context, title,
+  /// return project card widget
+  Widget card(BuildContext context, double? screenWidth) => projectCard(
+        context,
+        title,
         web: web,
         ios: ios,
         aos: aos,
@@ -64,6 +70,7 @@ class Project {
         backEndDescription: backEndDescription,
         cloudDescription: cloudDescription,
         packages: packages,
-        screenWidth: screenWidth);
-  }
+        screenWidth: screenWidth,
+        isNew: isNew,
+      );
 }

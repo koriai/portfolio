@@ -1,20 +1,22 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:cached_network_image/cached_network_image.dart';
+
 import '../../generated/l10n.dart';
 
-/// my profile page
-profile(BuildContext context) {
-  /// screen width
+/// my profile
+Semantics profile(BuildContext context) {
   final screenWidth = MediaQuery.of(context).size.width.toInt();
 
   /// my circleavartar
   final myCircleAvatar = ClipOval(
-      child: CircleAvatar(
-    minRadius: 24,
-    child: CachedNetworkImage(
-        imageUrl: 'https://avatars.githubusercontent.com/u/60956934?v=4'),
-  ));
+    child: CircleAvatar(
+      minRadius: 24,
+      child: CachedNetworkImage(
+        imageUrl: 'https://avatars.githubusercontent.com/u/60956934?v=4',
+      ),
+    ),
+  );
 
   /// my sns buttons
   final snsButtons = Row(
@@ -85,27 +87,29 @@ profile(BuildContext context) {
     label: 'profile',
     tooltip: "Hyunjin's Profile",
     child: SizedBox(
-        height: 120,
-        width: double.infinity,
-        child: Card(
-            margin: const EdgeInsets.all(8.0),
-            child: (screenWidth < 300)
-                ? myCircleAvatar
-                : Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      myCircleAvatar,
-                      Expanded(
-                        child: ListTile(
-                          title: Text(
-                            S.of(context).name,
-                            style: const TextStyle(fontWeight: FontWeight.bold),
-                          ),
-                          subtitle: const Text('bustina9@gmaill.com'),
-                        ),
+      height: 120,
+      width: double.infinity,
+      child: Card(
+        margin: const EdgeInsets.all(8),
+        child: (screenWidth < 300)
+            ? myCircleAvatar
+            : Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  myCircleAvatar,
+                  Expanded(
+                    child: ListTile(
+                      title: Text(
+                        S.of(context).name,
+                        style: const TextStyle(fontWeight: FontWeight.bold),
                       ),
-                      snsButtons,
-                    ],
-                  ))),
+                      subtitle: const Text('bustina9@gmaill.com'),
+                    ),
+                  ),
+                  snsButtons,
+                ],
+              ),
+      ),
+    ),
   );
 }

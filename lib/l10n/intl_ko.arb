@@ -39,5 +39,7 @@
     "clipsCloudDes1": "firebase firestore에서 클립 관리기능",
     "clipsCloudDes2": "firebase hosting으로 호스팅",
     "gllimTitle": "GLLIM (closed)",
-    "gllimDescription": "입력 문자열을 분석하여 해당하는 그림을 제공하는 번역서비스"
+    "gllimDescription": "입력 문자열을 분석하여 해당하는 그림을 제공하는 번역서비스",
+    "adaptiveExtension": "Adaptive extension 패키지",
+    "adaptiveExtensionDes1": "마테리얼-쿠퍼티노 위젯"
 }
