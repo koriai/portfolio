@@ -9,7 +9,13 @@
 # packages, and plugins designed to encourage good coding practices.
 include: package:flutter_lints/flutter.yaml
 
-linter:    
+analyzer: 
+  exclude:
+    - test/**
+    - lib/generated/**
+    - lib/generated/intl/**
+
+linter:
   # The lint rules applied to this project can be customized in the
   # section below to disable rules from the `package:flutter_lints/flutter.yaml`
   # included above or to enable additional rules. A list of all available lints
@@ -20,7 +26,9 @@ linter:
   # or a specific dart file by using the `// ignore: name_of_lint` and
   # `// ignore_for_file: name_of_lint` syntax on the line or in the file
   # producing the lint.
+
   rules:
+    - public_member_api_docs: false
     # - no_leading_underscores_for_library_prefixes
     # - no_leading_underscores_for_local_identifiers
     # - public_member_api_docs
