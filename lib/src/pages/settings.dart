@@ -3,11 +3,13 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
 
 import '../../generated/l10n.dart';
 import '../../main.dart';
 import '../model/personal_info.dart';
+import '../theme/bloc/theme_bloc.dart';
 
 /// Setting page
 class Settings extends StatefulWidget {
@@ -56,18 +58,13 @@ class _SettingsState extends State<Settings> {
       activeColor: Colors.blue,
       inactiveThumbColor: Colors.grey,
       thumbIcon: MaterialStateProperty.all(
-        (MyApp.themeNotifier.value == ThemeMode.light)
+        (context.read<ThemeBloc>().state.themeMode == ThemeMode.light)
             ? const Icon(Icons.light_mode)
             : const Icon(Icons.dark_mode),
       ),
-      value: MyApp.themeNotifier.value == ThemeMode.light,
+      value: context.read<ThemeBloc>().state.themeMode == ThemeMode.light,
       onChanged: (_) {
-        setState(() {
-          MyApp.themeNotifier.value =
-              MyApp.themeNotifier.value == ThemeMode.light
-                  ? ThemeMode.dark
-                  : ThemeMode.light;
-        });
+        context.read<ThemeBloc>().add(const ThemeChanged());
       },
     );
 

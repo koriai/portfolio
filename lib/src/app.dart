@@ -13,6 +13,7 @@ import '../src/model/personal_info.dart';
 import '../src/model/project_class.dart';
 import '../src/pages/settings.dart';
 import 'model/project_list.dart';
+import 'theme/widgets/widgets.dart';
 import 'widgets/profile_card.dart';
 
 /// resume 파일경로
@@ -94,38 +95,6 @@ class _PortfolioState extends State<Portfolio> {
       ),
     );
 
-    /// Change [themeMode] of the app
-    final IconButton changeThemeModeButton = IconButton(
-      icon: Icon(
-        MyApp.themeNotifier.value == ThemeMode.light
-            ? Icons.dark_mode
-            : Icons.light_mode,
-        color: Colors.white,
-      ),
-      onPressed: () {
-        setState(() {
-          MyApp.themeNotifier.value =
-              MyApp.themeNotifier.value == ThemeMode.light
-                  ? ThemeMode.dark
-                  : ThemeMode.light;
-        });
-      },
-    );
-
-    /// Change [language] of the app
-    final IconButton changeLanuageButton = IconButton(
-      onPressed: () {
-        setState(() {
-          if (Intl.getCurrentLocale() == 'en') {
-            S.load(const Locale('ko'));
-          } else {
-            S.load(const Locale('en'));
-          }
-        });
-      },
-      icon: const Icon(Icons.language, color: Colors.white),
-    );
-
     /// Drawer of the app
     final Drawer drawer = Drawer(
       child: ListView(
@@ -139,11 +108,11 @@ class _PortfolioState extends State<Portfolio> {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Row(
+                  const Row(
                     children: [
-                      const Expanded(child: SizedBox()),
-                      changeThemeModeButton,
-                      changeLanuageButton,
+                      Expanded(child: SizedBox()),
+                      ThemeChangeButton(),
+                      LocaleChangeButton(),
                     ],
                   ),
                   SizedBox(

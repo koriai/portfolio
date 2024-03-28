@@ -7,7 +7,8 @@ Project projectReport(BuildContext context) => Project(
       title: S.of(context).srTitle,
       web: Uri.parse('https://app.koriai.com/'),
       aos: Uri.parse(
-          'https://play.google.com/store/apps/details?id=com.koriai.report',),
+        'https://play.google.com/store/apps/details?id=com.koriai.report',
+      ),
       images: [
         const Image(image: AssetImage('assets/srreport/srreport-1.png')),
         const Image(image: AssetImage('assets/srreport/srreport-2.png')),
@@ -33,7 +34,8 @@ Project projectReport(BuildContext context) => Project(
         S.of(context).srCloudDes2,
         S.of(context).srCloudDes3,
       ],
-      packages: ['firebase', 'firebase'],);
+      packages: ['firebase', 'firebase'],
+    );
 
 /// Total war warhammer roster project
 Project projectTTWRoster(context) => Project(
@@ -53,7 +55,8 @@ Project projectTTWRoster(context) => Project(
         S.of(context).ttwBackDes1,
         S.of(context).ttwBackDes2,
       ],
-      cloudDescription: [S.of(context).ttwCloudDes1],);
+      cloudDescription: [S.of(context).ttwCloudDes1],
+    );
 
 /// clips-u project
 Project projectClips(context) => Project(
@@ -71,28 +74,29 @@ Project projectClips(context) => Project(
       cloudDescription: [
         S.of(context).clipsCloudDes1,
         S.of(context).clipsCloudDes2,
-      ],);
+      ],
+    );
 
 /// clips-u project
 Project projectGllim(context) => Project(
-    title: S.of(context).gllimTitle,
-    images: [
-      const Image(image: AssetImage('assets/gllim/gllim-1.png')),
-      const Image(image: AssetImage('assets/gllim/gllim-2.png')),
-      const Image(image: AssetImage('assets/gllim/gllim-3.png')),
-      const Image(image: AssetImage('assets/gllim/gllim-4.png')),
-    ],
-    description: S.of(context).gllimDescription,
-  );
+      title: S.of(context).gllimTitle,
+      images: [
+        const Image(image: AssetImage('assets/gllim/gllim-1.png')),
+        const Image(image: AssetImage('assets/gllim/gllim-2.png')),
+        const Image(image: AssetImage('assets/gllim/gllim-3.png')),
+        const Image(image: AssetImage('assets/gllim/gllim-4.png')),
+      ],
+      description: S.of(context).gllimDescription,
+    );
 
 /// Package to make adaptive widgets from Material to Cupertino
 ///
 /// [adaptive_extensions](https://pub.dev/packages/adaptive_extensions)
 Project projectAdaptiveExtensions(context) => Project(
-    isNew: true,
-    title: S.of(context).adaptiveExtension,
-    images: [
-      const Image(image: AssetImage('assets/adaptive/screencast1.gif')),
-    ],
-    description: S.of(context).adaptiveExtensionDes1,
-  );
+      isNew: true,
+      title: S.of(context).adaptiveExtension,
+      images: [
+        const Image(image: AssetImage('assets/adaptive/screencast1.gif')),
+      ],
+      description: S.of(context).adaptiveExtensionDes1,
+    );
